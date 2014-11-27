@@ -7,6 +7,7 @@
 //
 
 #import "PubSystemSupport.h"
+#import <objc/runtime.h>
 
 @implementation PubSystemSupport
 
@@ -70,6 +71,21 @@
     ret.origin.y = (parentSize.height - size.height) / 2;
     
     return ret;
+}
+
++ (id)viewWithNib:(NSString*)viewName {
+    return [[[NSBundle mainBundle] loadNibNamed:viewName owner:self options:nil] objectAtIndex:0];
+}
+
++ (id)viewControllerWithNib:(NSString*)controllerName {
+    if ([controllerName length] == 0) return nil;
+    
+    Class realClass = NSClassFromString(controllerName);
+    if (realClass == nil) return nil;
+    
+    if (!class_respondsToSelector(realClass, @selector(initWithNibName:bundle:))) return nil;
+    
+    return  [[realClass alloc] initWithNibName:controllerName bundle:nil];
 }
 
 @end

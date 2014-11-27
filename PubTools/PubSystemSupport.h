@@ -8,9 +8,6 @@
 
 #import <Foundation/Foundation.h>
 
-void async_main(dispatch_block_t block);
-void async_global(dispatch_block_t block);
-
 typedef enum {
     kIPhoneType35Inch = 0,
     kIPhoneType4Inch = 1,
@@ -30,5 +27,7 @@ typedef enum {
 
 + (CGRect)getCenterRect:(CGSize)size parentRect:(CGSize)parentSize;
 
++ (id)viewWithNib:(NSString*)viewName;
++ (id)viewControllerWithNib:(NSString*)controllerName;
 
 @end

@@ -49,6 +49,7 @@
 /* Begin PBXFileReference section */
 		0E3E7CD51A26C48100B3BBF9 /* PubSystemSupport.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PubSystemSupport.h; sourceTree = "<group>"; };
 		0E3E7CD61A26C48100B3BBF9 /* PubSystemSupport.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PubSystemSupport.m; sourceTree = "<group>"; };
+		0E3E7CD81A27204A00B3BBF9 /* PubMacroDef.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PubMacroDef.h; sourceTree = "<group>"; };
 		0E5E254A19B5586C00C9D243 /* libPubTools.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPubTools.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		0E5E254D19B5586C00C9D243 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		0E5E255119B5586C00C9D243 /* PubTools-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "PubTools-Prefix.pch"; sourceTree = "<group>"; };
@@ -138,6 +139,7 @@
 				0E5E257919B558A500C9D243 /* PBObjectSerialize.h */,
 				0E5E257A19B558A500C9D243 /* PBObjectSerialize.m */,
 				0E5E257B19B558A500C9D243 /* PubDef.h */,
+				0E3E7CD81A27204A00B3BBF9 /* PubMacroDef.h */,
 				0E3E7CD51A26C48100B3BBF9 /* PubSystemSupport.h */,
 				0E3E7CD61A26C48100B3BBF9 /* PubSystemSupport.m */,
 				0E5E257C19B558A500C9D243 /* SSKeychain.h */,

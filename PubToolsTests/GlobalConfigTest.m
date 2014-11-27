@@ -28,11 +28,7 @@
 
 - (void)testExample
 {
-    GlobalConfig* config = [GlobalConfig new];
-    
-//    XCTAssert();
-    
-    [PubSystemSupport getPhoneType];
+
 }
 
 @end
