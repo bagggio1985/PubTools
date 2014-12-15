@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		0E3E7CD71A26C48100B3BBF9 /* PubSystemSupport.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E3E7CD61A26C48100B3BBF9 /* PubSystemSupport.m */; };
+		0E3EBC911A3EBB14003E58EC /* NSDictionary+Helper.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E3EBC901A3EBB14003E58EC /* NSDictionary+Helper.m */; };
 		0E5E254E19B5586C00C9D243 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0E5E254D19B5586C00C9D243 /* Foundation.framework */; };
 		0E5E255C19B5586C00C9D243 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0E5E255B19B5586C00C9D243 /* XCTest.framework */; };
 		0E5E255D19B5586C00C9D243 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0E5E254D19B5586C00C9D243 /* Foundation.framework */; };
@@ -50,6 +51,8 @@
 		0E3E7CD51A26C48100B3BBF9 /* PubSystemSupport.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PubSystemSupport.h; sourceTree = "<group>"; };
 		0E3E7CD61A26C48100B3BBF9 /* PubSystemSupport.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PubSystemSupport.m; sourceTree = "<group>"; };
 		0E3E7CD81A27204A00B3BBF9 /* PubMacroDef.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PubMacroDef.h; sourceTree = "<group>"; };
+		0E3EBC8F1A3EBB14003E58EC /* NSDictionary+Helper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+Helper.h"; sourceTree = "<group>"; };
+		0E3EBC901A3EBB14003E58EC /* NSDictionary+Helper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+Helper.m"; sourceTree = "<group>"; };
 		0E5E254A19B5586C00C9D243 /* libPubTools.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPubTools.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		0E5E254D19B5586C00C9D243 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		0E5E255119B5586C00C9D243 /* PubTools-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "PubTools-Prefix.pch"; sourceTree = "<group>"; };
@@ -130,6 +133,8 @@
 		0E5E254F19B5586C00C9D243 /* PubTools */ = {
 			isa = PBXGroup;
 			children = (
+				0E3EBC8F1A3EBB14003E58EC /* NSDictionary+Helper.h */,
+				0E3EBC901A3EBB14003E58EC /* NSDictionary+Helper.m */,
 				0E5E257319B558A500C9D243 /* GlobalConfig.h */,
 				0E5E257419B558A500C9D243 /* GlobalConfig.m */,
 				0E5E257519B558A500C9D243 /* NSObject+ARC.h */,
@@ -261,6 +266,7 @@
 			files = (
 				0E5E258119B558A500C9D243 /* NSObject+ARC.m in Sources */,
 				0E3E7CD71A26C48100B3BBF9 /* PubSystemSupport.m in Sources */,
+				0E3EBC911A3EBB14003E58EC /* NSDictionary+Helper.m in Sources */,
 				0E5E258019B558A500C9D243 /* GlobalConfig.m in Sources */,
 				0E5E258219B558A500C9D243 /* NSString+Helper.m in Sources */,
 				0E5E258519B558A500C9D243 /* UIImage+Helper.m in Sources */,

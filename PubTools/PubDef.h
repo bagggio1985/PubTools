@@ -17,6 +17,7 @@
     #import "NSObject+ARC.h"
     #import "NSString+Helper.h"
     #import "PubSystemSupport.h"
+    #import "NSDictionary+Helper.h"
 #endif
 
 #endif
