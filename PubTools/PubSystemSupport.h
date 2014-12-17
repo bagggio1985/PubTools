@@ -27,7 +27,7 @@ typedef enum {
 
 + (CGRect)getCenterRect:(CGSize)size parentRect:(CGSize)parentSize;
 
-+ (id)viewWithNib:(NSString*)viewName;
++ (id)viewWithNib:(NSString*)viewName owner:(id)owner;
 + (id)viewControllerWithNib:(NSString*)controllerName;
 
 @end

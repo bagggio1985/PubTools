@@ -73,8 +73,8 @@
     return ret;
 }
 
-+ (id)viewWithNib:(NSString*)viewName {
-    return [[[NSBundle mainBundle] loadNibNamed:viewName owner:self options:nil] objectAtIndex:0];
++ (id)viewWithNib:(NSString*)viewName owner:(id)owner {
+    return [[[NSBundle mainBundle] loadNibNamed:viewName owner:owner options:nil] objectAtIndex:0];
 }
 
 + (id)viewControllerWithNib:(NSString*)controllerName {
