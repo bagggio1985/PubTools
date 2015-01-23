@@ -217,7 +217,9 @@ static PubLocation* s_locationMgr = nil;
             break;
         case kCLAuthorizationStatusNotDetermined:
 #if Compile_For_IOS8
-            [self.locationManager requestWhenInUseAuthorization];
+            if ([self.locationManager respondsToSelector:@selector(requestWhenInUseAuthorization)]) {
+                [self.locationManager requestWhenInUseAuthorization];
+            }
 #endif
             break;
         default:
