@@ -29,3 +29,36 @@ static NSMutableSet *s_allObjectsRelative = nil;
 }
 
 @end
+
+@implementation NSObject (GCDSupport)
+
+- (void)invokeAsyncMain:(dispatch_block_t)block {
+    dispatch_async(dispatch_get_main_queue(), ^{
+        @autoreleasepool {
+            block();
+        }
+    });
+}
+
+- (void)invokeAsyncGlobal:(dispatch_block_t)block {
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+        @autoreleasepool {
+            block();
+        }
+    });
+}
+
+- (void)invokeSync:(dispatch_block_t)block {
+    if ([NSThread isMainThread]) {
+        block();
+    }
+    else {
+        dispatch_sync(dispatch_get_main_queue(), ^{
+            @autoreleasepool {
+                block();
+            }
+        });
+    }
+}
+
+@end

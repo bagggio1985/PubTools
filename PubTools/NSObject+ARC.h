@@ -15,3 +15,11 @@
 - (void)releaseObject;
 
 @end
+
+@interface NSObject (GCDSupport)
+
+- (void)invokeAsyncMain:(dispatch_block_t)block;
+- (void)invokeAsyncGlobal:(dispatch_block_t)block;
+- (void)invokeSync:(dispatch_block_t)block;
+
+@end
