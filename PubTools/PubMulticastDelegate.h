@@ -13,9 +13,11 @@
 + (instancetype)sharedMulticastDelegate;
 
 /// selector 支持0或者1个NSString参数的方法
+/// 最后事件的分发是在主线程中
 - (void)addDelegate:(id)delegate selector:(SEL)selector relatedEvent:(NSString*)event;
 - (void)removeDelegate:(id)delegate relatedEvent:(NSString*)event;
 
 - (void)dispatchEvent:(NSString*)event;
+- (void)dispatchEvent:(NSString*)event withObject:(id)object;
 
 @end

@@ -8,6 +8,8 @@
 
 #import "PubMulticastDelegate.h"
 
+static const void * const kDispatchQueueSpecificKey = &kDispatchQueueSpecificKey;
+
 @interface PubMulticastDelegateNode : NSObject
 
 @property (nonatomic, weak) id delegate;
@@ -32,7 +34,9 @@
 
 @end
 
-@interface PubMulticastDelegate ()
+@interface PubMulticastDelegate () {
+    dispatch_queue_t _queue;
+}
 
 @property (nonatomic, strong) NSMutableArray* delegateNodes;
 
@@ -60,8 +64,16 @@
     return self;
 }
 
+- (void)dealloc {
+#if __IPHONE_OS_VERSION_MIN_REQUIRED < 60000 // 6.0sdk之前
+    dispatch_release(_queue);
+#endif
+}
+
 - (void)commonInit {
     self.delegateNodes = [NSMutableArray array];
+    _queue = dispatch_queue_create("cn.arcyun.beautylink.multicast", DISPATCH_QUEUE_SERIAL);
+    dispatch_queue_set_specific(_queue, kDispatchQueueSpecificKey, (__bridge void *)self, NULL);
 }
 
 - (void)addDelegate:(id)delegate selector:(SEL)selector relatedEvent:(NSString*)event {
@@ -89,9 +101,15 @@
 }
 
 - (void)dispatchEvent:(NSString*)event {
+    
+    [self dispatchEvent:event withObject:nil];
+}
+
+- (void)dispatchEvent:(NSString*)event withObject:(id)object {
     if ([event length] == 0) return ;
     
     [self invokeAsync:^{
+        
         for (int index = [self.delegateNodes count]; index > 0;  index--) {
             PubMulticastDelegateNode* node = self.delegateNodes[index-1];
             
@@ -101,37 +119,54 @@
             else {
                 if ([node.delegate respondsToSelector:node.selector]) {
                     
-                    NSMethodSignature *methodSig = [node.delegate methodSignatureForSelector:node.selector];
-                    // 0 and 1 is self and _cmd
-                    int num = [methodSig numberOfArguments];
-
-                    NSInvocation *invocation = [NSInvocation invocationWithMethodSignature:methodSig];
-                    [invocation setTarget:node.delegate];
-                    [invocation setSelector:node.selector];
-                    
-                    switch (num) {
-                        case 2:
-                            [invocation invoke];
-                            break;
-                        case 3:
-                        {
-                            NSString* backEvent = event;
-                            [invocation setArgument:&backEvent atIndex:2];
-                            [invocation invoke];
+                    /// delegate的触发是异步的
+                    [self invokeMainAsync:^{
+                        
+                        if (node.delegate == nil) return ;
+                        
+                        NSMethodSignature *methodSig = [node.delegate methodSignatureForSelector:node.selector];
+                        // 0 and 1 is self and _cmd
+                        int num = [methodSig numberOfArguments];
+                        
+                        NSInvocation *invocation = [NSInvocation invocationWithMethodSignature:methodSig];
+                        [invocation setTarget:node.delegate];
+                        [invocation setSelector:node.selector];
+                        
+                        switch (num) {
+                            case 2:
+                                [invocation invoke];
+                                break;
+                            case 3:
+                            {
+                                id backEvent = object;
+                                if (object == nil) {
+                                    backEvent = event;
+                                }
+                                [invocation setArgument:&backEvent atIndex:2];
+                                [invocation invoke];
+                            }
+                                break;
+                            default:
+                                break;
                         }
-                            break;
-                        default:
-                            break;
-                    }
-                    
+                    }];
                 }
             }
         }
     }];
 }
 
-- (void)invokeAsync:(dispatch_block_t)block {
+
+- (void)invokeMainAsync:(dispatch_block_t)block {
     dispatch_async(dispatch_get_main_queue(), ^{
+        @autoreleasepool {
+            block();
+        }
+    });
+}
+
+- (void)invokeAsync:(dispatch_block_t)block {
+    dispatch_async(_queue, ^{
         @autoreleasepool {
             block();
         }
@@ -140,12 +175,14 @@
 
 - (void)invokeSync:(dispatch_block_t)block {
     
-    if ([NSThread isMainThread]) {
+    void* specific = dispatch_get_specific(kDispatchQueueSpecificKey);
+    
+    if (specific) {
         block();
         return ;
     }
     
-    dispatch_sync(dispatch_get_main_queue(), ^{
+    dispatch_sync(_queue, ^{
         @autoreleasepool {
             block();
         }
