@@ -65,9 +65,21 @@ static const void * const kDispatchQueueSpecificKey = &kDispatchQueueSpecificKey
 }
 
 - (void)dealloc {
+    [self removeAllDelegate];
 #if __IPHONE_OS_VERSION_MIN_REQUIRED < 60000 // 6.0sdk之前
     dispatch_release(_queue);
 #endif
+}
+
+- (void)removeAllDelegate {
+    [self invokeSync:^{
+        for (PubMulticastDelegateNode* node in self.delegateNodes) {
+            node.delegate = nil;
+        }
+        
+        [self.delegateNodes removeAllObjects];
+        self.delegateNodes = nil;
+    }];
 }
 
 - (void)commonInit {
