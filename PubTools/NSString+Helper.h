@@ -35,4 +35,9 @@
 - (NSDate*)getDateTimeWithFormat:(NSString*)formatterStr;
 - (NSDateComponents*)getComponentWithFormat:(NSString*)formatterStr;
 
+
+// Must be 0xRRGGBB or #RRGGBB or RRGGBB format
+- (UIColor*)getColor;
+- (UIColor*)getColorAlpha:(float)alpha;
+
 @end

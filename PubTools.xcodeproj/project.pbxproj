@@ -26,6 +26,11 @@
 		0E5E258719B55BA000C9D243 /* GlobalConfigTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E5E258619B55BA000C9D243 /* GlobalConfigTest.m */; };
 		0E636A2B1A6DEB4300345C56 /* PubLocation.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E636A2A1A6DEB4300345C56 /* PubLocation.m */; };
 		0E636A2D1A6DEB7600345C56 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0E636A2C1A6DEB7600345C56 /* CoreLocation.framework */; };
+		0EEFC4221A8B23AA004E1620 /* PubCommonFunction.m in Sources */ = {isa = PBXBuildFile; fileRef = 0EEFC4211A8B23AA004E1620 /* PubCommonFunction.m */; };
+		0EEFC4241A8B2DD9004E1620 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0EEFC4231A8B2DD9004E1620 /* MapKit.framework */; };
+		0EEFC4251A8B2E18004E1620 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0EEFC4231A8B2DD9004E1620 /* MapKit.framework */; };
+		0EEFC4261A8B2E1E004E1620 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0E636A2C1A6DEB7600345C56 /* CoreLocation.framework */; };
+		0EEFC4291A8B30A2004E1620 /* BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0EEFC4281A8B30A2004E1620 /* BaseViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -84,6 +89,11 @@
 		0E636A291A6DEB4300345C56 /* PubLocation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PubLocation.h; sourceTree = "<group>"; };
 		0E636A2A1A6DEB4300345C56 /* PubLocation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PubLocation.m; sourceTree = "<group>"; };
 		0E636A2C1A6DEB7600345C56 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		0EEFC4201A8B237E004E1620 /* PubCommonFunction.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PubCommonFunction.h; sourceTree = "<group>"; };
+		0EEFC4211A8B23AA004E1620 /* PubCommonFunction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PubCommonFunction.m; sourceTree = "<group>"; };
+		0EEFC4231A8B2DD9004E1620 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		0EEFC4271A8B30A2004E1620 /* BaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseViewController.h; sourceTree = "<group>"; };
+		0EEFC4281A8B30A2004E1620 /* BaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,6 +101,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0EEFC4241A8B2DD9004E1620 /* MapKit.framework in Frameworks */,
 				0E636A2D1A6DEB7600345C56 /* CoreLocation.framework in Frameworks */,
 				0E5E254E19B5586C00C9D243 /* Foundation.framework in Frameworks */,
 			);
@@ -100,6 +111,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0EEFC4261A8B2E1E004E1620 /* CoreLocation.framework in Frameworks */,
+				0EEFC4251A8B2E18004E1620 /* MapKit.framework in Frameworks */,
 				0E5E255C19B5586C00C9D243 /* XCTest.framework in Frameworks */,
 				0E5E255F19B5586C00C9D243 /* UIKit.framework in Frameworks */,
 				0E5E255D19B5586C00C9D243 /* Foundation.framework in Frameworks */,
@@ -132,6 +145,7 @@
 		0E5E254C19B5586C00C9D243 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				0EEFC4231A8B2DD9004E1620 /* MapKit.framework */,
 				0E636A2C1A6DEB7600345C56 /* CoreLocation.framework */,
 				0E5E254D19B5586C00C9D243 /* Foundation.framework */,
 				0E5E255B19B5586C00C9D243 /* XCTest.framework */,
@@ -166,6 +180,10 @@
 				0E5E255019B5586C00C9D243 /* Supporting Files */,
 				0E5E257E19B558A500C9D243 /* UIImage+Helper.h */,
 				0E5E257F19B558A500C9D243 /* UIImage+Helper.m */,
+				0EEFC4201A8B237E004E1620 /* PubCommonFunction.h */,
+				0EEFC4211A8B23AA004E1620 /* PubCommonFunction.m */,
+				0EEFC4271A8B30A2004E1620 /* BaseViewController.h */,
+				0EEFC4281A8B30A2004E1620 /* BaseViewController.m */,
 			);
 			path = PubTools;
 			sourceTree = "<group>";
@@ -279,6 +297,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0E5E258119B558A500C9D243 /* NSObject+ARC.m in Sources */,
+				0EEFC4291A8B30A2004E1620 /* BaseViewController.m in Sources */,
 				0E3E7CD71A26C48100B3BBF9 /* PubSystemSupport.m in Sources */,
 				0E3EBC911A3EBB14003E58EC /* NSDictionary+Helper.m in Sources */,
 				0E2EF95D1A76550600F36DB1 /* PubMulticastDelegate.m in Sources */,
@@ -288,6 +307,7 @@
 				0E5E258519B558A500C9D243 /* UIImage+Helper.m in Sources */,
 				0E5E258319B558A500C9D243 /* PBObjectSerialize.m in Sources */,
 				0E5E258419B558A500C9D243 /* SSKeychain.m in Sources */,
+				0EEFC4221A8B23AA004E1620 /* PubCommonFunction.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

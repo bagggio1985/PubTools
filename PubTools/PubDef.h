@@ -18,6 +18,7 @@
     #import "NSString+Helper.h"
     #import "PubSystemSupport.h"
     #import "NSDictionary+Helper.h"
+    #import "PubCommonFunction.h"
 #endif
 
 #endif

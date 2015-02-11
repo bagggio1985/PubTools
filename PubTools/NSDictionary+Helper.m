@@ -22,3 +22,20 @@
 }
 
 @end
+
+@implementation NSArray (Helper)
+
+- (id)objectAtIndexSafe:(NSUInteger)index {
+    id ret = nil;
+    @try {
+        ret = [self objectAtIndex:index];
+    }
+    @catch (NSException *exception) {
+        ret = nil;
+    }
+    @finally {
+        return ret;
+    }
+}
+
+@end

@@ -10,12 +10,16 @@
 
 @interface NSDictionary (Helper)
 
-
-
 @end
 
 @interface NSMutableDictionary (Helper)
 
 - (void)setObjectSafe:(id)object forKey:(NSString*)key;
+
+@end
+
+@interface NSArray (Helper)
+
+- (id)objectAtIndexSafe:(NSUInteger)index;
 
 @end

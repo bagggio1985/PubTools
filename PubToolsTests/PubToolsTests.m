@@ -7,7 +7,6 @@
 //
 
 #import <XCTest/XCTest.h>
-#import "PubLocation.h"
 
 @interface PubToolsTests : XCTestCase
 
@@ -30,7 +29,8 @@
 - (void)testExample
 {
 //    XCTFail(@"No implementation for \"%s\"", __PRETTY_FUNCTION__);
-    [PubLocation systemLocationStatus];
+//    [PubLocation systemLocationStatus];
+
 }
 
 @end
