@@ -25,7 +25,7 @@
         self.backWithAnimation = YES;
         self.isCommonInitEnd = NO;
         
-        self.statusBarHidden = NO;
+        _statusBarHidden = [UIApplication sharedApplication].statusBarHidden;
         self.navigationBarHidden = NO;
         
         [self configVCBaseState];
