@@ -15,4 +15,5 @@
 - (UIImage*)fillInSize:(CGSize)size;
 - (UIImage*)fitInSize:(CGSize)size;
 
+
 @end

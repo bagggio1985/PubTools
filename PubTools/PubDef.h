@@ -10,6 +10,8 @@
 #define PubTools_PubDef_h
 
 #ifdef __OBJC__
+    #import <UIKit/UIKit.h>
+    #import <Foundation/Foundation.h>
     #import "PBObjectSerialize.h"
     #import "SSkeychain.h"
     #import "UIImage+Helper.h"

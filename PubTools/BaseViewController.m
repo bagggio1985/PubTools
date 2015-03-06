@@ -26,7 +26,7 @@
         self.isCommonInitEnd = NO;
         
         _statusBarHidden = [UIApplication sharedApplication].statusBarHidden;
-        self.navigationBarHidden = NO;
+        self.navigationBarHidden = self.navigationController.navigationBarHidden;
         
         [self configVCBaseState];
         

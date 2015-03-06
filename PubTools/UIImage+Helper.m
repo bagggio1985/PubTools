@@ -6,6 +6,7 @@
 //  Copyright (c) 2014年 arcsoft. All rights reserved.
 //
 
+#import <ImageIO/ImageIO.h>
 #import "UIImage+Helper.h"
 
 @implementation UIImage (Helper)
@@ -55,6 +56,27 @@
     UIImage *theImage = UIGraphicsGetImageFromCurrentImageContext();
     UIGraphicsEndImageContext();
     return theImage;
+}
+
++ (UIImage*)resizeImageAtPath:(NSString*)imagePath {
+    // Create the image source (from path)
+    CGImageSourceRef src = CGImageSourceCreateWithURL((__bridge CFURLRef)[NSURL fileURLWithPath:imagePath], NULL);
+    
+    // To create image source from UIImage, use this
+    // NSData* pngData =  UIImagePNGRepresentation(image);
+    // CGImageSourceRef src = CGImageSourceCreateWithData((CFDataRef)pngData, NULL);
+    
+    // Create thumbnail options
+    CFDictionaryRef options = (__bridge CFDictionaryRef) @{
+                                                           (id) kCGImageSourceCreateThumbnailWithTransform : @YES,
+                                                           (id) kCGImageSourceCreateThumbnailFromImageAlways : @YES,
+                                                           (id) kCGImageSourceThumbnailMaxPixelSize : @(640)
+                                                           };
+    // Generate the thumbnail
+    CGImageRef thumbnail = CGImageSourceCreateThumbnailAtIndex(src, 0, options); 
+    CFRelease(src);
+    
+    return CFBridgingRelease(thumbnail);
 }
 
 #pragma mark Private
