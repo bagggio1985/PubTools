@@ -16,6 +16,10 @@
 
 @end
 
+#define PubDispatchMain     dispatch_async(dispatch_get_main_queue(), ^{ @autoreleasepool {
+#define PubDispatchGlobal   dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{ @autoreleasepool {
+#define PubDispatchEnd }});
+
 @interface NSObject (GCDSupport)
 
 - (void)invokeAsyncMain:(dispatch_block_t)block;
