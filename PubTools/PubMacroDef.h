@@ -19,4 +19,11 @@
 
 #define DEBUG_LOG_FUNCTION  DEBUG_NSLog(@"%s", __func__)
 
+#define Pub_Rect_X(frame, xx) { CGRect frame___ = (frame); if (frame___.origin.x != (xx)) { frame___.origin.x = (xx); (frame) = frame___; } }
+#define Pub_Rect_Y(frame, yy) { CGRect frame___ = (frame); if (frame___.origin.y != (yy)) { frame___.origin.y = (yy); (frame) = frame___; } }
+#define Pub_Rect_Width(frame, ww) { CGRect frame___ = (frame); if (frame___.size.width != (ww)) { frame___.size.width = (ww); (frame) = frame___; } }
+#define Pub_Rect_Height(frame, hh) { CGRect frame___ = (frame); if (frame___.size.height != (hh)) { frame___.size.height = (hh); (frame) = frame___; } }
+
+#define RGBFromHexadecimal(value) [UIColor colorWithRed:((float)((value & 0xFF0000) >> 16))/255.0 green:((float)((value & 0xFF00) >> 8))/255.0 blue:((float)(value & 0xFF))/255.0 alpha:1.0]
+
 #endif
