@@ -18,6 +18,9 @@
 #endif
 
 #define DEBUG_LOG_FUNCTION  DEBUG_NSLog(@"%s", __func__)
+#define NSLogRect(rect) NSLog(@"%s x:%.4f, y:%.4f, w:%.4f, h:%.4f", #rect, rect.origin.x, rect.origin.y, rect.size.width, rect.size.height)
+#define NSLogSize(size) NSLog(@"%s w:%.4f, h:%.4f", #size, size.width, size.height)
+#define NSLogPoint(point) NSLog(@"%s x:%.4f, y:%.4f", #point, point.x, point.y)
 
 #define Pub_Rect_X(frame, xx) { CGRect frame___ = (frame); if (frame___.origin.x != (xx)) { frame___.origin.x = (xx); (frame) = frame___; } }
 #define Pub_Rect_Y(frame, yy) { CGRect frame___ = (frame); if (frame___.origin.y != (yy)) { frame___.origin.y = (yy); (frame) = frame___; } }
