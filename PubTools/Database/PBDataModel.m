@@ -177,6 +177,13 @@
     return [self getInnerAllKeys:[self class]];
 }
 
++ (NSArray*)getDBKeysExcept:(NSArray*)keys {
+    NSArray* allDBKeys = [self getAllDBKeys];
+    NSMutableArray* mutableKeys = [NSMutableArray arrayWithArray:allDBKeys];
+    [mutableKeys removeObjectsInArray:keys];
+    return mutableKeys;
+}
+
 + (NSSet*)notDBKeys {
     return nil;
 }
@@ -469,7 +476,7 @@
 + (BOOL)canFitStaments:(NSString*)where argsCount:(NSInteger)count {
     NSInteger charCount = 0;
     for (int index = 0; index < where.length; index++) {
-        unichar character = [where characterAtIndex:0];
+        unichar character = [where characterAtIndex:index];
         if (character == '?') {
             charCount++;
         }
