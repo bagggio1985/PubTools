@@ -116,4 +116,6 @@
  */
 + (NSSet*)notDBKeys;
 
++ (NSArray*)getAllProperty:(Class)classType;
+
 @end

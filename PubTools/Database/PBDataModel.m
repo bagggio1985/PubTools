@@ -181,6 +181,28 @@
     return nil;
 }
 
++ (NSArray*)getAllProperty:(Class)classType {
+    
+    NSMutableArray* retAry = [NSMutableArray new];
+    unsigned int count = 0;
+    objc_property_t* list = class_copyPropertyList(classType, &count);
+    for (unsigned int idx = 0; idx < count; idx++) {
+        objc_property_t property = list[idx];
+        
+        const char* name = property_getName(property);
+        NSString* propertyName = [NSString stringWithUTF8String:name];
+        if ([propertyName length] == 0) continue;
+        
+        if ([self isInnerProperty:propertyName]) continue;
+        
+        [retAry addObject:propertyName];
+    }
+    // delete malloc memory
+    if (list) free(list);
+    
+    return retAry;
+}
+
 #pragma mark - Private Update
 
 - (NSString*)getUpdateSetKey:(NSArray*)keys {
