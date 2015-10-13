@@ -10,6 +10,7 @@
 #import <CommonCrypto/CommonDigest.h>
 #import <CommonCrypto/CommonHMAC.h>
 #import <CommonCrypto/CommonCryptor.h>
+#import <sys/xattr.h>
 
 @implementation NSData (Helper)
 
@@ -83,6 +84,11 @@
 	}
     return params;
 }
+
+- (BOOL)isEmpty {
+    return ([self subSpace].length == 0);
+}
+
 #pragma mark -- 日期时间的转换
 /*
  时间格式定义:
@@ -167,5 +173,72 @@
     
     return [UIColor colorWithRed:((float)r / 255.0f) green:((float)g / 255.0f) blue:((float)b / 255.0f) alpha:alpha];
 }
+
+@end
+
+@implementation NSString (Path)
+
++ (instancetype)documentPath {
+    static NSString * path = nil;
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        path = [[NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES)
+                 objectAtIndex:0] copy];
+    });
+    return path;
+}
+
++ (instancetype)cachePath {
+    static NSString * path = nil;
+
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        path = [[NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES)
+                 objectAtIndex:0] copy];
+    });
+    
+    return path;
+}
+
+- (NSURL*)toUrl {
+    return [NSURL URLWithString:self];
+}
+
+//+ (BOOL)addSkipBackupAttributeToItemAtURL:(NSURL *)URL
+//{
+//    if (URL==nil) {
+//        return NO;
+//    }
+//    NSString *systemVersion=[[UIDevice currentDevice] systemVersion];
+//    float version=[systemVersion floatValue];
+//    if (version<5.0) {
+//        return YES;
+//    }
+//    if ( version>=5.1) {
+//        assert([[NSFileManager defaultManager] fileExistsAtPath: [URL path]]);
+//        
+//        NSError *error = nil;
+//        BOOL success = [URL setResourceValue: [NSNumber numberWithBool: YES]
+//                                      forKey: NSURLIsExcludedFromBackupKey error: &error];
+//        if(!success){
+//        }
+//        return success;
+//    }
+//    
+//    if ([systemVersion isEqual:@"5.0"]) {
+//        return NO;
+//    }else{
+//        assert([[NSFileManager defaultManager] fileExistsAtPath: [URL path]]);
+//        
+//        const char* filePath = [[URL path] fileSystemRepresentation];
+//        
+//        const char* attrName = "com.apple.MobileBackup";
+//        u_int8_t attrValue = 1;
+//        
+//        int result = setxattr(filePath, attrName, &attrValue, sizeof(attrValue), 0, 0);
+//        return result == 0;
+//    }
+//    return YES;
+//}
 
 @end

@@ -25,6 +25,7 @@
 - (NSString*)urlEncode;
 - (NSString *)urlDecode;
 - (NSDictionary*)parseURLParams;
+- (BOOL)isEmpty; // 首先去除前后的空格，然后再判断
 
 /// 常用日期格式:
 /// yyyy-MM-dd HH:mm:ss.SSS
@@ -39,5 +40,14 @@
 // Must be 0xRRGGBB or #RRGGBB or RRGGBB format
 - (UIColor*)getColor;
 - (UIColor*)getColorAlpha:(float)alpha;
+
+@end
+
+@interface NSString (Path)
+
++ (instancetype)documentPath;
++ (instancetype)cachePath;
+
+- (NSURL*)toUrl;
 
 @end
