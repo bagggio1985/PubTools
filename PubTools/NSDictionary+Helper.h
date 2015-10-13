@@ -10,11 +10,28 @@
 
 @interface NSDictionary (Helper)
 
+// 过滤掉NSNull类型
+- (id)safeObjectForKey:(id)key;
+- (int)intForKey:(id)key;
+- (double)doubleForKey:(id)key;
+- (NSString*)stringForKey:(id)key;
+
 @end
 
 @interface NSMutableDictionary (Helper)
 
-- (void)setObjectSafe:(id)object forKey:(NSString*)key;
+- (void)setObjectSafe:(id)object forKey:(id)key;
+- (void)setInt:(int)value forKey:(id)key;
+- (void)setDouble:(double)value forKey:(id)key;
+
+@end
+
+@interface NSDictionary (Json)
+
++ (instancetype)dictionaryWithJsonString:(NSString*)json;
++ (instancetype)dictionaryWithJsonData:(NSData*)json;
+
+- (NSString*)jsonString;
 
 @end
 
