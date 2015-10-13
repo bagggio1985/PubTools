@@ -12,7 +12,8 @@
 #ifdef __OBJC__
     #import <UIKit/UIKit.h>
     #import <Foundation/Foundation.h>
-    #import "PBObjectSerialize.h"
+    #import "PTMacroDef.h"
+    #import "PTSerialize.h"
     #import "SSkeychain.h"
     #import "UIImage+Helper.h"
     #import "GlobalConfig.h"

@@ -6,10 +6,10 @@
 //
 //
 
-#import "PBObjectSerialize.h"
+#import "PTSerialize.h"
 #import <objc/runtime.h>
 
-@implementation PBObjectSerialize
+@implementation PTSerialize
 
 - (id)init {
     if (self = [super init]) {
@@ -21,7 +21,6 @@
 
 - (id)initWithCoder:(NSCoder *)aDecoder {
     if (self = [super init]) {
-        
         Class currentClass = object_getClass(self);
         [self decode:aDecoder class:currentClass];
     }
@@ -41,7 +40,7 @@
 
 - (void)decode:(NSCoder*)aDecoder class:(Class)curClass {
     const char* className = class_getName(curClass);
-    if (strcasecmp(className, "PBObjectSerialize") == 0) {
+    if (strcasecmp(className, "PTSerialize") == 0) {
         // 已经调至当前基类里面了，不能在继续查询了
         return ;
     }
@@ -83,7 +82,7 @@
 
 - (void)encode:(NSCoder*)aDecoder class:(Class)curClass {
     const char* className = class_getName(curClass);
-    if (strcasecmp(className, "PBObjectSerialize") == 0) {
+    if (strcasecmp(className, "PTSerialize") == 0) {
         // 已经调至当前基类里面了，不能在继续查询了
         return ;
     }

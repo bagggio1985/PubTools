@@ -9,23 +9,17 @@
 #import "NSObject+ARC.h"
 #import <objc/runtime.h>
 
-static NSMutableSet *s_allObjectsRelative = nil;
+static void * const kNSObjectAssociatedKey = (void*)&kNSObjectAssociatedKey;
 
 @implementation NSObject (ARC)
 
 - (id)retainObject {
-    static dispatch_once_t onceToken;
-    dispatch_once(&onceToken, ^{
-        s_allObjectsRelative = [[NSMutableSet alloc] init];
-    });
-    
-    [s_allObjectsRelative addObject:self];
-    
+    objc_setAssociatedObject(self, kNSObjectAssociatedKey, self, OBJC_ASSOCIATION_RETAIN);
     return self;
 }
 
 - (void)releaseObject {
-    [s_allObjectsRelative removeObject:self];
+    objc_setAssociatedObject(self, kNSObjectAssociatedKey, nil, OBJC_ASSOCIATION_RETAIN);
 }
 
 @end

@@ -7,6 +7,7 @@
 //
 
 #import <XCTest/XCTest.h>
+#import "PTSerialize.h"
 
 @interface PubToolsTests : XCTestCase
 
@@ -30,7 +31,7 @@
 {
 //    XCTFail(@"No implementation for \"%s\"", __PRETTY_FUNCTION__);
 //    [PubLocation systemLocationStatus];
-
+    PTSerialize* a = [[PTSerialize alloc] init];
 }
 
 @end

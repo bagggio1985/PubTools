@@ -176,7 +176,7 @@
 
 @end
 
-@implementation NSString (Path)
+@implementation NSString (PTPath)
 
 + (instancetype)documentPath {
     static NSString * path = nil;

@@ -43,7 +43,7 @@
 
 @end
 
-@interface NSString (Path)
+@interface NSString (PTPath)
 
 + (instancetype)documentPath;
 + (instancetype)cachePath;

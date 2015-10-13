@@ -8,6 +8,6 @@
 
 #import <Foundation/Foundation.h>
 
-@interface PBObjectSerialize : NSObject <NSCoding>
+@interface PTSerialize : NSObject <NSCoding>
 
 @end
