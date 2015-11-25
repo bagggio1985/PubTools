@@ -1,6 +1,5 @@
 //
 //  PBTableViewCell.m
-//  TestTableViewController
 //
 //  Created by kyao on 15/11/24.
 //  Copyright © 2015年 mac. All rights reserved.
