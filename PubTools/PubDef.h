@@ -3,7 +3,7 @@
 //  PubTools
 //
 //  Created by kyao on 14-9-2.
-//  Copyright (c) 2014年 arcsoft. All rights reserved.
+//  Copyright (c) 2014年 . All rights reserved.
 //
 
 #ifndef PubTools_PubDef_h
@@ -13,8 +13,6 @@
     #import <UIKit/UIKit.h>
     #import <Foundation/Foundation.h>
     #import "PTMacroDef.h"
-    #import "PTSerialize.h"
-    #import "SSkeychain.h"
     #import "UIImage+Helper.h"
     #import "GlobalConfig.h"
     #import "NSObject+ARC.h"

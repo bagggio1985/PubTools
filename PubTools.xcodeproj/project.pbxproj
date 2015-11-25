@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0E2EF95D1A76550600F36DB1 /* PubMulticastDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E2EF95C1A76550600F36DB1 /* PubMulticastDelegate.m */; };
+		0E3D2C8D1BF338A50048FD1A /* PTLock.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E3D2C8C1BF338A50048FD1A /* PTLock.m */; settings = {ASSET_TAGS = (); }; };
 		0E3E7CD71A26C48100B3BBF9 /* PubSystemSupport.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E3E7CD61A26C48100B3BBF9 /* PubSystemSupport.m */; };
 		0E3EBC911A3EBB14003E58EC /* NSDictionary+Helper.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E3EBC901A3EBB14003E58EC /* NSDictionary+Helper.m */; };
 		0E5E254E19B5586C00C9D243 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0E5E254D19B5586C00C9D243 /* Foundation.framework */; };
@@ -21,7 +21,6 @@
 		0E5E258119B558A500C9D243 /* NSObject+ARC.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E5E257619B558A500C9D243 /* NSObject+ARC.m */; };
 		0E5E258219B558A500C9D243 /* NSString+Helper.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E5E257819B558A500C9D243 /* NSString+Helper.m */; };
 		0E5E258319B558A500C9D243 /* PTSerialize.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E5E257A19B558A500C9D243 /* PTSerialize.m */; };
-		0E5E258419B558A500C9D243 /* SSKeychain.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E5E257D19B558A500C9D243 /* SSKeychain.m */; };
 		0E5E258519B558A500C9D243 /* UIImage+Helper.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E5E257F19B558A500C9D243 /* UIImage+Helper.m */; };
 		0E5E258719B55BA000C9D243 /* GlobalConfigTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E5E258619B55BA000C9D243 /* GlobalConfigTest.m */; };
 		0E636A2B1A6DEB4300345C56 /* PubLocation.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E636A2A1A6DEB4300345C56 /* PubLocation.m */; };
@@ -56,8 +55,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		0E2EF95B1A76550600F36DB1 /* PubMulticastDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PubMulticastDelegate.h; sourceTree = "<group>"; };
-		0E2EF95C1A76550600F36DB1 /* PubMulticastDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PubMulticastDelegate.m; sourceTree = "<group>"; };
+		0E3D2C8B1BF338A50048FD1A /* PTLock.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PTLock.h; sourceTree = "<group>"; };
+		0E3D2C8C1BF338A50048FD1A /* PTLock.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PTLock.m; sourceTree = "<group>"; };
 		0E3E7CD51A26C48100B3BBF9 /* PubSystemSupport.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PubSystemSupport.h; sourceTree = "<group>"; };
 		0E3E7CD61A26C48100B3BBF9 /* PubSystemSupport.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PubSystemSupport.m; sourceTree = "<group>"; };
 		0E3E7CD81A27204A00B3BBF9 /* PTMacroDef.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PTMacroDef.h; sourceTree = "<group>"; };
@@ -81,8 +80,6 @@
 		0E5E257919B558A500C9D243 /* PTSerialize.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PTSerialize.h; sourceTree = "<group>"; };
 		0E5E257A19B558A500C9D243 /* PTSerialize.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PTSerialize.m; sourceTree = "<group>"; };
 		0E5E257B19B558A500C9D243 /* PubDef.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PubDef.h; sourceTree = "<group>"; };
-		0E5E257C19B558A500C9D243 /* SSKeychain.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSKeychain.h; sourceTree = "<group>"; };
-		0E5E257D19B558A500C9D243 /* SSKeychain.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSKeychain.m; sourceTree = "<group>"; };
 		0E5E257E19B558A500C9D243 /* UIImage+Helper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Helper.h"; sourceTree = "<group>"; };
 		0E5E257F19B558A500C9D243 /* UIImage+Helper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Helper.m"; sourceTree = "<group>"; };
 		0E5E258619B55BA000C9D243 /* GlobalConfigTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GlobalConfigTest.m; sourceTree = "<group>"; };
@@ -171,12 +168,8 @@
 				0E636A291A6DEB4300345C56 /* PubLocation.h */,
 				0E636A2A1A6DEB4300345C56 /* PubLocation.m */,
 				0E3E7CD81A27204A00B3BBF9 /* PTMacroDef.h */,
-				0E2EF95B1A76550600F36DB1 /* PubMulticastDelegate.h */,
-				0E2EF95C1A76550600F36DB1 /* PubMulticastDelegate.m */,
 				0E3E7CD51A26C48100B3BBF9 /* PubSystemSupport.h */,
 				0E3E7CD61A26C48100B3BBF9 /* PubSystemSupport.m */,
-				0E5E257C19B558A500C9D243 /* SSKeychain.h */,
-				0E5E257D19B558A500C9D243 /* SSKeychain.m */,
 				0E5E255019B5586C00C9D243 /* Supporting Files */,
 				0E5E257E19B558A500C9D243 /* UIImage+Helper.h */,
 				0E5E257F19B558A500C9D243 /* UIImage+Helper.m */,
@@ -184,6 +177,8 @@
 				0EEFC4211A8B23AA004E1620 /* PubCommonFunction.m */,
 				0EEFC4271A8B30A2004E1620 /* BaseViewController.h */,
 				0EEFC4281A8B30A2004E1620 /* BaseViewController.m */,
+				0E3D2C8B1BF338A50048FD1A /* PTLock.h */,
+				0E3D2C8C1BF338A50048FD1A /* PTLock.m */,
 			);
 			path = PubTools;
 			sourceTree = "<group>";
@@ -297,16 +292,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				0E5E258119B558A500C9D243 /* NSObject+ARC.m in Sources */,
+				0E3D2C8D1BF338A50048FD1A /* PTLock.m in Sources */,
 				0EEFC4291A8B30A2004E1620 /* BaseViewController.m in Sources */,
 				0E3E7CD71A26C48100B3BBF9 /* PubSystemSupport.m in Sources */,
 				0E3EBC911A3EBB14003E58EC /* NSDictionary+Helper.m in Sources */,
-				0E2EF95D1A76550600F36DB1 /* PubMulticastDelegate.m in Sources */,
 				0E636A2B1A6DEB4300345C56 /* PubLocation.m in Sources */,
 				0E5E258019B558A500C9D243 /* GlobalConfig.m in Sources */,
 				0E5E258219B558A500C9D243 /* NSString+Helper.m in Sources */,
 				0E5E258519B558A500C9D243 /* UIImage+Helper.m in Sources */,
 				0E5E258319B558A500C9D243 /* PTSerialize.m in Sources */,
-				0E5E258419B558A500C9D243 /* SSKeychain.m in Sources */,
 				0EEFC4221A8B23AA004E1620 /* PubCommonFunction.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -3,11 +3,12 @@
 //  PubToolsTests
 //
 //  Created by kyao on 14-9-2.
-//  Copyright (c) 2014年 arcsoft. All rights reserved.
+//  Copyright (c) 2014年 . All rights reserved.
 //
 
 #import <XCTest/XCTest.h>
 #import "PTSerialize.h"
+#import "PTLock.h"
 
 @interface PubToolsTests : XCTestCase
 
@@ -31,7 +32,13 @@
 {
 //    XCTFail(@"No implementation for \"%s\"", __PRETTY_FUNCTION__);
 //    [PubLocation systemLocationStatus];
-    PTSerialize* a = [[PTSerialize alloc] init];
+    PTLock *lock = [[PTLock alloc] init];
+    {
+        [[PTAutoLock alloc] initWithLock:lock];
+    }
+    
+    int i = 0;
+
 }
 
 @end

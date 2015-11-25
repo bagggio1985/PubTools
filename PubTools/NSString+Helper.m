@@ -3,7 +3,7 @@
 //  PubTools
 //
 //  Created by kyao on 14-9-1.
-//  Copyright (c) 2014年 arcsoft. All rights reserved.
+//  Copyright (c) 2014年 . All rights reserved.
 //
 
 #import "NSString+Helper.h"

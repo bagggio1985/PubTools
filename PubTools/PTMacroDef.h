@@ -3,7 +3,7 @@
 //  PubTools
 //
 //  Created by kyao on 14-11-27.
-//  Copyright (c) 2014年 arcsoft. All rights reserved.
+//  Copyright (c) 2014年 . All rights reserved.
 //
 
 #ifndef PubTools_PubMacroDef_h
