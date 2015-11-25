@@ -9,6 +9,9 @@
 #import "Masonry.h"
 #import "PTTableViewCell.h"
 #import "UITableView+FDTemplateLayoutCell.h"
+#if PT_HAVE_PULL_THIRD
+#import "SVPullToRefresh.h"
+#endif
 
 @interface PTTableViewController () <PTTableViewCellDelegate>
 
@@ -38,6 +41,9 @@
 - (void)commonInit {
     self.dataArray = [NSMutableArray array];
     self.tableViewStyle = UITableViewStylePlain;
+#if PT_HAVE_PULL_THIRD
+    self.pullStyle = kPTTableViewPullRefreshNone;
+#endif
 }
 
 - (void)loadView {
@@ -62,9 +68,13 @@
     self.tableView = tableView;
     [self registerClass:[PTTableViewCell class]];
     
-#ifdef DEBUG
-    [tableView setFd_debugLogEnabled:YES];
+#if PT_HAVE_PULL_THIRD
+    [self configPullRefresh];
 #endif
+    
+//#ifdef DEBUG
+//    [tableView setFd_debugLogEnabled:YES];
+//#endif
 }
 
 - (void)didReceiveMemoryWarning {
@@ -116,6 +126,74 @@
 - (NSString*)getClassIdentifier:(NSIndexPath*)indexPath {
     return NSStringFromClass([self getClass:indexPath]);
 }
+
+#pragma mark - PullRefrsh
+
+#if PT_HAVE_PULL_THIRD
+- (void)configPullRefresh {
+    __weak PTTableViewController* weakSelf = self;
+    if (self.pullStyle & kPTTableViewPullRefreshTop) {
+        [self.tableView addPullToRefreshWithActionHandler:^{
+            [weakSelf insertTopData:^{
+                [weakSelf.tableView.pullToRefreshView stopAnimating];
+            }];
+        }];
+    }
+    
+    if (self.pullStyle & kPTTableViewPullRefreshBottom) {
+        [self.tableView addInfiniteScrollingWithActionHandler:^{
+            [weakSelf insertBottomData:^{
+                [weakSelf.tableView.infiniteScrollingView stopAnimating];
+            }];
+        }];
+    }
+    
+    [self setupPullCustomization];
+}
+
+// 自定义下拉刷新的view
+- (void)setupPullCustomization {
+    if (self.pullStyle & kPTTableViewPullRefreshTop) {
+        
+    }
+    
+    if (self.pullStyle & kPTTableViewPullRefreshBottom) {
+        
+    }
+}
+
+- (void)forceRefresh {
+    [self.tableView triggerPullToRefresh];
+}
+
+- (void)insertTopData:(PTTableViewPullRefrshBlock)finish {
+    if (finish) {
+        finish();
+    }
+}
+
+- (void)insertBottomData:(PTTableViewPullRefrshBlock)finish {
+    if (finish) {
+        finish();
+    }
+}
+
+- (void)setStillHaveData:(BOOL)stillHaveData {
+    _stillHaveData = stillHaveData;
+    
+    if (!(self.pullStyle & kPTTableViewPullRefreshBottom)) return ;
+    
+    if (stillHaveData) {
+        self.tableView.showsInfiniteScrolling = YES;
+    }
+    else {
+        [self.tableView.infiniteScrollingView stopAnimating];
+        self.tableView.showsInfiniteScrolling = NO;
+    }
+}
+
+
+#endif
 
 #pragma mark - UITableViewDataSource
 

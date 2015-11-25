@@ -1,6 +1,19 @@
 
 #import <UIKit/UIKit.h>
 
+// 使用SVPullToRefresh库
+#define PT_HAVE_PULL_THIRD 1
+
+#if PT_HAVE_PULL_THIRD
+typedef NS_ENUM(NSInteger, kPTTableViewPullRefresh) {
+    kPTTableViewPullRefreshNone = 0,
+    kPTTableViewPullRefreshTop = 1,
+    kPTTableViewPullRefreshBottom = 2,
+    kPTTableViewPullRefreshAll = (kPTTableViewPullRefreshTop|kPTTableViewPullRefreshBottom)
+};
+#endif
+
+typedef void(^PTTableViewPullRefrshBlock)();
 
 /**
  * 该类会通过TableViewCell的autolayout属性来进行计算高度，
@@ -38,5 +51,21 @@
 // 该方法会默认获取dataArray的数量，如果需定制重写该方法
 - (NSUInteger)getCellCount;
 - (id)getEntityByIndexPath:(NSIndexPath*)indexPath;
+
+//////////////////////////////////////////////////////////////////////////////////////////////////
+// 下拉刷新相关方法
+#if PT_HAVE_PULL_THIRD
+// default is kPTTableViewPullRefreshNone
+@property (nonatomic, assign) kPTTableViewPullRefresh pullStyle;
+// 用来判断是否需要显示下一页
+@property (nonatomic, assign) BOOL stillHaveData;
+
+- (void)forceRefresh;
+// 异步操作完成后调用finish的block
+// 下拉刷新的时候会调用该方法
+- (void)insertTopData:(PTTableViewPullRefrshBlock)finish;
+- (void)insertBottomData:(PTTableViewPullRefrshBlock)finish;
+
+#endif
 
 @end
