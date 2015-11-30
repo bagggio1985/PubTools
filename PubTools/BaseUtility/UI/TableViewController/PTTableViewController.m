@@ -146,6 +146,7 @@
                 [weakSelf.tableView.infiniteScrollingView stopAnimating];
             }];
         }];
+         self.tableView.showsInfiniteScrolling = NO;
     }
     
     [self setupPullCustomization];
