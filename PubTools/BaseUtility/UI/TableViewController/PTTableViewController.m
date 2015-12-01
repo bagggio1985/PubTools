@@ -59,10 +59,13 @@
     tableView.dataSource = self;
     tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     tableView.backgroundColor = [UIColor clearColor];
+    tableView.showsHorizontalScrollIndicator = NO;
+    tableView.showsVerticalScrollIndicator = NO;
     [self.view addSubview:tableView];
     [tableView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.right.equalTo(self.view);
         make.top.equalTo(self.mas_topLayoutGuideBottom);
+        // 如果想使用透明的tabbar，需要修改为mas_bottomLayoutGuideBottom
         make.bottom.equalTo(self.mas_bottomLayoutGuideTop);
     }];
     self.tableView = tableView;
@@ -164,6 +167,7 @@
 }
 
 - (void)forceRefresh {
+    [self.tableView setContentOffset:CGPointMake(0, 0)];
     [self.tableView triggerPullToRefresh];
 }
 
