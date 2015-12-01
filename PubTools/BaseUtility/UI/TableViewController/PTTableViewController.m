@@ -138,7 +138,7 @@
     if (self.pullStyle & kPTTableViewPullRefreshTop) {
         [self.tableView addPullToRefreshWithActionHandler:^{
             [weakSelf insertTopData:^{
-                [weakSelf.tableView.pullToRefreshView stopAnimating];
+                [weakSelf endInsertTopData];
             }];
         }];
     }
@@ -146,7 +146,7 @@
     if (self.pullStyle & kPTTableViewPullRefreshBottom) {
         [self.tableView addInfiniteScrollingWithActionHandler:^{
             [weakSelf insertBottomData:^{
-                [weakSelf.tableView.infiniteScrollingView stopAnimating];
+                [weakSelf endInsertBottomData];
             }];
         }];
          self.tableView.showsInfiniteScrolling = NO;
@@ -181,6 +181,14 @@
     if (finish) {
         finish();
     }
+}
+
+- (void)endInsertTopData {
+    [self.tableView.pullToRefreshView stopAnimating];
+}
+
+- (void)endInsertBottomData {
+    [self.tableView.infiniteScrollingView stopAnimating];
 }
 
 - (void)setStillHaveData:(BOOL)stillHaveData {
