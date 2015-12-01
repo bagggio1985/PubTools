@@ -141,6 +141,7 @@
                 [weakSelf endInsertTopData];
             }];
         }];
+        [self setLastUpdateDate];
     }
     
     if (self.pullStyle & kPTTableViewPullRefreshBottom) {
@@ -149,7 +150,7 @@
                 [weakSelf endInsertBottomData];
             }];
         }];
-         self.tableView.showsInfiniteScrolling = NO;
+        self.tableView.showsInfiniteScrolling = NO;
     }
     
     [self setupPullCustomization];
@@ -185,10 +186,18 @@
 
 - (void)endInsertTopData {
     [self.tableView.pullToRefreshView stopAnimating];
+    [self setLastUpdateDate];
 }
 
 - (void)endInsertBottomData {
     [self.tableView.infiniteScrollingView stopAnimating];
+}
+
+- (void)setLastUpdateDate {
+    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+    [formatter setDateFormat:@"yyyy-MM-dd hh:mm:ss"];
+    NSString* lastDate = [NSString stringWithFormat:NSLocalizedString(@"Update: %@", nil), [formatter stringFromDate:[NSDate date]]];
+    [self.tableView.pullToRefreshView setSubtitle:lastDate forState:SVPullToRefreshStateAll];
 }
 
 - (void)setStillHaveData:(BOOL)stillHaveData {
