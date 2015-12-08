@@ -17,6 +17,7 @@
 
 @property (nonatomic, weak) UITableView* tableView;
 @property (nonatomic, strong) Class currentClass;
+@property (nonatomic, assign) BOOL isRequesting;
 
 @end
 
@@ -41,6 +42,7 @@
 - (void)commonInit {
     self.dataArray = [NSMutableArray array];
     self.tableViewStyle = UITableViewStylePlain;
+    self.isRequesting = NO;
 #if PT_HAVE_PULL_THIRD
     self.pullStyle = kPTTableViewPullRefreshNone;
 #endif
@@ -137,6 +139,11 @@
     __weak PTTableViewController* weakSelf = self;
     if (self.pullStyle & kPTTableViewPullRefreshTop) {
         [self.tableView addPullToRefreshWithActionHandler:^{
+            if (weakSelf.isRequesting) {
+                [weakSelf endInsertTopData:NO];
+                return ;
+            }
+            weakSelf.isRequesting = YES;
             [weakSelf insertTopData:^{
                 [weakSelf endInsertTopData];
             }];
@@ -146,6 +153,11 @@
     
     if (self.pullStyle & kPTTableViewPullRefreshBottom) {
         [self.tableView addInfiniteScrollingWithActionHandler:^{
+            if (weakSelf.isRequesting) {
+                [weakSelf endInsertBottomData:NO];
+                return ;
+            }
+            weakSelf.isRequesting = YES;
             [weakSelf insertBottomData:^{
                 [weakSelf endInsertBottomData];
             }];
@@ -168,6 +180,9 @@
 }
 
 - (void)forceRefresh {
+    // 过滤掉正在请求的下拉刷新
+    if (self.isRequesting && self.tableView.pullToRefreshView.state == SVPullToRefreshStateLoading) return ;
+    
     [self.tableView setContentOffset:CGPointMake(0, 0)];
     [self.tableView triggerPullToRefresh];
 }
@@ -185,12 +200,33 @@
 }
 
 - (void)endInsertTopData {
-    [self.tableView.pullToRefreshView stopAnimating];
-    [self setLastUpdateDate];
+    [self endInsertTopData:YES];
 }
 
 - (void)endInsertBottomData {
+    [self endInsertBottomData:YES];
+}
+
+- (void)endInsertBottomDataWith:(BOOL)stillHaveData {
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [self endInsertBottomData:YES];
+        self.stillHaveData = stillHaveData;
+    });
+}
+
+- (void)endInsertTopData:(BOOL)endReq {
+    [self.tableView.pullToRefreshView stopAnimating];
+    if (endReq) {
+        [self setLastUpdateDate];
+        self.isRequesting = NO;
+    }
+}
+
+- (void)endInsertBottomData:(BOOL)endReq {
     [self.tableView.infiniteScrollingView stopAnimating];
+    if (endReq) {
+        self.isRequesting = NO;
+    }
 }
 
 - (void)setLastUpdateDate {

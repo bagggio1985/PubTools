@@ -67,7 +67,7 @@ typedef void(^PTTableViewPullRefrshBlock)();
 - (void)insertBottomData:(PTTableViewPullRefrshBlock)finish;
 
 - (void)endInsertTopData;
-- (void)endInsertBottomData;
+- (void)endInsertBottomDataWith:(BOOL)stillHaveData;
 
 #endif
 
