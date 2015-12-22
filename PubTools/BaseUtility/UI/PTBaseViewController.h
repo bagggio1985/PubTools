@@ -22,6 +22,11 @@
 - (void)backAction:(id)sender;
 - (void)backTo:(Class)view animated:(BOOL)animated;
 
+- (void)showLoadingView;
+- (void)hideLoadingView;
+
+- (void)showToast:(NSString*)toast;
+
 #pragma mark - MaskOn
 - (void)setMaskOn:(BOOL)on;
 - (void)onMaskTaped;

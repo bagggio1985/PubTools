@@ -1,5 +1,6 @@
 
 #import <UIKit/UIKit.h>
+#import "PTBaseViewController.h"
 
 // 使用SVPullToRefresh库
 #define PT_HAVE_PULL_THIRD 1
@@ -24,7 +25,7 @@ typedef void(^PTTableViewPullRefrshBlock)();
  * 注意contentView高度能通过子view来计算
  */
 @class PTTableViewCell;
-@interface PTTableViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
+@interface PTTableViewController : PTBaseViewController <UITableViewDataSource, UITableViewDelegate>
 
 @property (nonatomic, assign) UITableViewStyle tableViewStyle; // default is UITableViewStylePlain
 @property (nonatomic, weak, readonly) UITableView* tableView;

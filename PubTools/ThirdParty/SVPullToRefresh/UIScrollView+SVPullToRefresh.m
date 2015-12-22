@@ -175,7 +175,7 @@ static char UIScrollViewPullToRefreshView;
         
         // default styling values
         self.activityIndicatorViewStyle = UIActivityIndicatorViewStyleGray;
-        self.textColor = [UIColor darkGrayColor];
+        self.textColor = [UIColor colorWithRed:148/255.0 green:148/255.0 blue:148/255.0 alpha:1.0];
         self.autoresizingMask = UIViewAutoresizingFlexibleWidth;
         self.state = SVPullToRefreshStateStopped;
         self.showsDateLabel = NO;
@@ -306,15 +306,16 @@ static char UIScrollViewPullToRefreshView;
             CGFloat minY = (self.bounds.size.height / 2)  - (totalHeight / 2);
             
             CGFloat titleY = minY;
-            self.titleLabel.frame = CGRectIntegral(CGRectMake(labelX, titleY, titleSize.width, titleSize.height));
-            self.subtitleLabel.frame = CGRectIntegral(CGRectMake(labelX, titleY + titleSize.height + marginY, subtitleSize.width, subtitleSize.height));
+            self.titleLabel.frame = CGRectIntegral(CGRectMake(labelX, titleY, maxLabelWidth, titleSize.height));
+            self.subtitleLabel.frame = CGRectIntegral(CGRectMake(labelX, titleY + titleSize.height + marginY, maxLabelWidth, subtitleSize.height));
+            
         }else{
             CGFloat totalHeight = titleSize.height;
             CGFloat minY = (self.bounds.size.height / 2)  - (totalHeight / 2);
             
             CGFloat titleY = minY;
-            self.titleLabel.frame = CGRectIntegral(CGRectMake(labelX, titleY, titleSize.width, titleSize.height));
-            self.subtitleLabel.frame = CGRectIntegral(CGRectMake(labelX, titleY + titleSize.height + marginY, subtitleSize.width, subtitleSize.height));
+            self.titleLabel.frame = CGRectIntegral(CGRectMake(labelX, titleY, maxLabelWidth, titleSize.height));
+            self.subtitleLabel.frame = CGRectIntegral(CGRectMake(labelX, titleY + titleSize.height + marginY, maxLabelWidth, subtitleSize.height));
         }
         
         CGFloat arrowX = (self.bounds.size.width / 2) - (totalMaxWidth / 2) + (leftViewWidth - self.arrow.bounds.size.width) / 2;
@@ -462,8 +463,9 @@ static char UIScrollViewPullToRefreshView;
     if(!_titleLabel) {
         _titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 210, 20)];
         _titleLabel.text = NSLocalizedString(@"Pull to refresh...",);
-        _titleLabel.font = [UIFont boldSystemFontOfSize:14];
+        _titleLabel.font = [UIFont boldSystemFontOfSize:13];
         _titleLabel.backgroundColor = [UIColor clearColor];
+        _titleLabel.textAlignment = NSTextAlignmentCenter;
         _titleLabel.textColor = textColor;
         [self addSubview:_titleLabel];
     }
@@ -475,6 +477,7 @@ static char UIScrollViewPullToRefreshView;
         _subtitleLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 210, 20)];
         _subtitleLabel.font = [UIFont systemFontOfSize:12];
         _subtitleLabel.backgroundColor = [UIColor clearColor];
+        _subtitleLabel.textAlignment = NSTextAlignmentCenter;
         _subtitleLabel.textColor = textColor;
         [self addSubview:_subtitleLabel];
     }
@@ -677,25 +680,23 @@ static char UIScrollViewPullToRefreshView;
 
 - (UIColor *)arrowColor {
 	if (arrowColor) return arrowColor;
-	return [UIColor grayColor]; // default Color
+	return [UIColor colorWithRed:119.f/255 green:119.f/255 blue:119.f/255 alpha:0.42]; // default Color
 }
 
 - (void)drawRect:(CGRect)rect {
 	CGContextRef c = UIGraphicsGetCurrentContext();
 	
 	// the rects above the arrow
-	CGContextAddRect(c, CGRectMake(5, 0, 12, 4)); // to-do: use dynamic points
-	CGContextAddRect(c, CGRectMake(5, 6, 12, 4)); // currently fixed size: 22 x 48pt
-	CGContextAddRect(c, CGRectMake(5, 12, 12, 4));
-	CGContextAddRect(c, CGRectMake(5, 18, 12, 4));
-	CGContextAddRect(c, CGRectMake(5, 24, 12, 4));
-	CGContextAddRect(c, CGRectMake(5, 30, 12, 4));
+	CGContextAddRect(c, CGRectMake(8, 12, 6, 1.5)); // currently fixed size: 22 x 48pt
+	CGContextAddRect(c, CGRectMake(8, 14.5, 6, 2.5));
+	CGContextAddRect(c, CGRectMake(8, 18, 6, 3.5));
+	CGContextAddRect(c, CGRectMake(8, 22.5, 6, 4.5));
 	
 	// the arrow
-	CGContextMoveToPoint(c, 0, 34);
-	CGContextAddLineToPoint(c, 11, 48);
-	CGContextAddLineToPoint(c, 22, 34);
-	CGContextAddLineToPoint(c, 0, 34);
+	CGContextMoveToPoint(c, 3, 27);
+	CGContextAddLineToPoint(c, 11, 36);
+	CGContextAddLineToPoint(c, 19, 27);
+	CGContextAddLineToPoint(c, 0, 27);
 	CGContextClosePath(c);
 	
 	CGContextSaveGState(c);
@@ -709,7 +710,7 @@ static char UIScrollViewPullToRefreshView;
     if([[[UIDevice currentDevice] systemVersion]floatValue] >= 5){
         NSArray* alphaGradientColors = [NSArray arrayWithObjects:
                                         (id)[self.arrowColor colorWithAlphaComponent:0].CGColor,
-                                        (id)[self.arrowColor colorWithAlphaComponent:1].CGColor,
+                                        (id)[self.arrowColor colorWithAlphaComponent:0.42].CGColor,
                                         nil];
         alphaGradient = CGGradientCreateWithColors(colorSpace, (__bridge CFArrayRef)alphaGradientColors, alphaGradientLocations);
     }else{

@@ -7,10 +7,13 @@
 //
 
 #import "PTBaseViewController.h"
+#import "MBProgressHUD.h"
+#import "PTToast.h"
 
 @interface PTBaseViewController ()
 
 @property (nonatomic, strong) UITapGestureRecognizer* tapReconizer;
+@property (nonatomic, weak) MBProgressHUD* hud;
 
 @end
 
@@ -128,6 +131,24 @@
             break;
         }
     }
+}
+
+- (void)showLoadingView {
+    
+    [self hideLoadingView];
+    
+    MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+    hud.mode = MBProgressHUDModeIndeterminate;
+    self.hud = hud;
+}
+
+- (void)hideLoadingView {
+    [self.hud hide:YES];
+    self.hud = nil;
+}
+
+- (void)showToast:(NSString*)toast {
+    [PTToast makeText:toast];
 }
 
 #pragma mark - MaskOn
