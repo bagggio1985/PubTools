@@ -15,5 +15,7 @@
 - (UIImage*)fillInSize:(CGSize)size;
 - (UIImage*)fitInSize:(CGSize)size;
 
+- (UIImage*)imageRotatedByRadians:(CGFloat)radians;
+- (UIImage*)imageRotatedByDegrees:(CGFloat)degrees;
 
 @end

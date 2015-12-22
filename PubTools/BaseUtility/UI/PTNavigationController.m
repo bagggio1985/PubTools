@@ -17,7 +17,7 @@
 
 + (void)setupNavigationBar {
     //设置NavigationBar背景颜色
-    [[UINavigationBar appearance] setBarTintColor:[UIColor redColor]];
+    [[UINavigationBar appearance] setBarTintColor:[UIColor whiteColor]];
     //@{}代表Dictionary
     [[UINavigationBar appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName:[UIColor whiteColor]}];
     

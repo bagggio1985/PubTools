@@ -22,6 +22,7 @@
 - (NSData *)HMACSHA1WithKey:(NSString *)key;
 
 - (NSString*)subSpace;
+- (NSString*)subReturnSpace;
 - (NSString*)urlEncode;
 - (NSString *)urlDecode;
 - (NSDictionary*)parseURLParams;
