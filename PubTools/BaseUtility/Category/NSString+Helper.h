@@ -42,6 +42,11 @@
 - (UIColor*)getColor;
 - (UIColor*)getColorAlpha:(float)alpha;
 
+#if __IPHONE_OS_VERSION_MIN_REQUIRED >= __IPHONE_7_0
+- (CGSize)sizeWithBoundSize:(CGSize)size font:(UIFont*)font;
+- (CGSize)sizeWithTextFont:(UIFont*)font;
+#endif
+
 @end
 
 @interface NSString (PTPath)

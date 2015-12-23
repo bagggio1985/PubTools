@@ -178,6 +178,14 @@
     return [UIColor colorWithRed:((float)r / 255.0f) green:((float)g / 255.0f) blue:((float)b / 255.0f) alpha:alpha];
 }
 
+- (CGSize)sizeWithBoundSize:(CGSize)size font:(UIFont*)font {
+    return [self boundingRectWithSize:size options:NSStringDrawingUsesLineFragmentOrigin|NSStringDrawingUsesFontLeading attributes:@{NSFontAttributeName:font} context:nil].size;
+}
+
+- (CGSize)sizeWithTextFont:(UIFont*)font {
+    return [self sizeWithAttributes:@{NSFontAttributeName:font}];
+}
+
 @end
 
 @implementation NSString (PTPath)
