@@ -116,9 +116,6 @@ static CGFloat const kLabelTopOffsetRetina = 0.5f;
     [self addSubview:self.placeholderLabel];
     [self setupConstraints:CGPointMake(labelLeftOffset, labelTopOffset)];
     
-    NSArray* log = self.constraints;
-    DEBUG_NSLog(@"%@", log);
-    
 }
 
 - (void)setupConstraints:(CGPoint)offset {
