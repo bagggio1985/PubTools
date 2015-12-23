@@ -20,6 +20,7 @@
 		0EAE65DF1C291F4200392B31 /* PTTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 0EAE65DE1C291F4200392B31 /* PTTextField.m */; settings = {ASSET_TAGS = (); }; };
 		0EAE65E21C2925B400392B31 /* PTUtility.m in Sources */ = {isa = PBXBuildFile; fileRef = 0EAE65E11C2925B400392B31 /* PTUtility.m */; settings = {ASSET_TAGS = (); }; };
 		0EAE65E81C2A66A600392B31 /* UIColor+Helper.m in Sources */ = {isa = PBXBuildFile; fileRef = 0EAE65E71C2A66A600392B31 /* UIColor+Helper.m */; settings = {ASSET_TAGS = (); }; };
+		0EAE65EB1C2A6EB600392B31 /* PTTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0EAE65EA1C2A6EB600392B31 /* PTTextView.m */; settings = {ASSET_TAGS = (); }; };
 		0EEEE2B01C05EC7800A367F5 /* NSDictionary+Helper.m in Sources */ = {isa = PBXBuildFile; fileRef = 0EEEE2231C05EC7800A367F5 /* NSDictionary+Helper.m */; };
 		0EEEE2B11C05EC7800A367F5 /* NSObject+ARC.m in Sources */ = {isa = PBXBuildFile; fileRef = 0EEEE2251C05EC7800A367F5 /* NSObject+ARC.m */; };
 		0EEEE2B21C05EC7800A367F5 /* NSString+Helper.m in Sources */ = {isa = PBXBuildFile; fileRef = 0EEEE2271C05EC7800A367F5 /* NSString+Helper.m */; };
@@ -129,6 +130,8 @@
 		0EAE65E11C2925B400392B31 /* PTUtility.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PTUtility.m; sourceTree = "<group>"; };
 		0EAE65E61C2A66A600392B31 /* UIColor+Helper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+Helper.h"; sourceTree = "<group>"; };
 		0EAE65E71C2A66A600392B31 /* UIColor+Helper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+Helper.m"; sourceTree = "<group>"; };
+		0EAE65E91C2A6EB600392B31 /* PTTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PTTextView.h; sourceTree = "<group>"; };
+		0EAE65EA1C2A6EB600392B31 /* PTTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PTTextView.m; sourceTree = "<group>"; };
 		0EEEE2221C05EC7800A367F5 /* NSDictionary+Helper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+Helper.h"; sourceTree = "<group>"; };
 		0EEEE2231C05EC7800A367F5 /* NSDictionary+Helper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+Helper.m"; sourceTree = "<group>"; };
 		0EEEE2241C05EC7800A367F5 /* NSObject+ARC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+ARC.h"; sourceTree = "<group>"; };
@@ -449,6 +452,8 @@
 				0EEEE2F11C05EE3400A367F5 /* PTToast.h */,
 				0EEEE2F21C05EE3400A367F5 /* PTToast.m */,
 				0EEEE2451C05EC7800A367F5 /* TableViewController */,
+				0EAE65E91C2A6EB600392B31 /* PTTextView.h */,
+				0EAE65EA1C2A6EB600392B31 /* PTTextView.m */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -737,6 +742,7 @@
 				0EEEE2F01C05EDEA00A367F5 /* PTBaseViewController.m in Sources */,
 				0EEEE2E51C05EC7800A367F5 /* UIView+WebCacheOperation.m in Sources */,
 				0EEEE2D11C05EC7800A367F5 /* NSArray+MASAdditions.m in Sources */,
+				0EAE65EB1C2A6EB600392B31 /* PTTextView.m in Sources */,
 				0EEEE2D01C05EC7800A367F5 /* MASViewConstraint.m in Sources */,
 				0EEEE2EA1C05EC7800A367F5 /* UITableView+FDTemplateLayoutCell.m in Sources */,
 				0EEEE2C91C05EC7800A367F5 /* AFURLSessionManager.m in Sources */,
