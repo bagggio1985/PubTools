@@ -17,4 +17,18 @@
     return CGRectInset(bounds, self.insetsXY.x, self.insetsXY.y);
 }
 
+- (CGRect)placeholderRectForBounds:(CGRect)bounds {
+    return CGRectInset(bounds, self.insetsXY.x, self.insetsXY.y);
+}
+
+- (void)setRightView:(UIView *)rightView {
+    [super setRightView:rightView];
+    self.rightViewMode = UITextFieldViewModeAlways;
+}
+
+- (void)setLeftView:(UIView *)leftView {
+    [super setLeftView:leftView];
+    self.leftViewMode = UITextFieldViewModeAlways;
+}
+
 @end
