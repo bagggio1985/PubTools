@@ -14,6 +14,8 @@
 - (id)retainObject;
 - (void)releaseObject;
 
+@property (nonatomic, retain) id attachedObj;
+
 @end
 
 #define PubDispatchMain     dispatch_async(dispatch_get_main_queue(), ^{ @autoreleasepool {

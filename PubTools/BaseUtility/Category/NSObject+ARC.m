@@ -10,6 +10,7 @@
 #import <objc/runtime.h>
 
 static void * const kNSObjectAssociatedKey = (void*)&kNSObjectAssociatedKey;
+static void * const kNSObjectAttachedObjKey = (void*)&kNSObjectAttachedObjKey;
 
 @implementation NSObject (ARC)
 
@@ -20,6 +21,14 @@ static void * const kNSObjectAssociatedKey = (void*)&kNSObjectAssociatedKey;
 
 - (void)releaseObject {
     objc_setAssociatedObject(self, kNSObjectAssociatedKey, nil, OBJC_ASSOCIATION_RETAIN);
+}
+
+- (void)setAttachedObj:(id)attachedObj {
+    objc_setAssociatedObject(self, kNSObjectAttachedObjKey, attachedObj, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+}
+
+- (id)attachedObj {
+    return objc_getAssociatedObject(self, kNSObjectAttachedObjKey);
 }
 
 @end
