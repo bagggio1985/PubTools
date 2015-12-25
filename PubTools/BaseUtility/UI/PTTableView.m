@@ -8,6 +8,7 @@
 
 #import <objc/runtime.h>
 #import "Masonry.h"
+#import "PTMethodAdapter.h"
 #import "PTTableView.h"
 #import "PTTableViewCell.h"
 #import "UITableView+FDTemplateLayoutCell.h"
@@ -15,21 +16,16 @@
 #import "SVPullToRefresh.h"
 #endif
 
-@interface PTDelegateConvert : NSObject
-
-@end
-
-@implementation PTDelegateConvert
-
-@end
-
-@interface PTTableView () <PTTableViewCellDelegate>
+@interface PTTableView () <PTTableViewCellDelegate> {
+    __weak id<PTTableViewDelegate> _delegate;
+}
 
 @property (nonatomic, assign) UITableViewStyle tableViewStyle; // default is UITableViewStylePlain
 @property (nonatomic, weak) UITableView* tableView;
 @property (nonatomic, strong) Class currentClass;
 @property (nonatomic, assign) BOOL isRequesting;
 @property (nonatomic, assign) kPTTableViewPullRefresh pullStyle;
+@property (nonatomic, strong) PTMethodAdapter* adapter;
 
 @end
 
@@ -49,10 +45,11 @@
     self.dataArray = [NSMutableArray array];
     self.tableViewStyle = UITableViewStylePlain;
     self.isRequesting = NO;
+    self.adapter = [[PTMethodAdapter alloc] initWithSource:self dest:self.delegate];
     
     UITableView* tableView = [[UITableView alloc] initWithFrame:self.bounds style:self.tableViewStyle];
-    tableView.delegate = self;
-    tableView.dataSource = self;
+    tableView.delegate = (id<UITableViewDelegate>)self.adapter;
+    tableView.dataSource = (id<UITableViewDataSource>)self.adapter;
     tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     tableView.backgroundColor = [UIColor clearColor];
     tableView.showsHorizontalScrollIndicator = NO;
@@ -68,6 +65,12 @@
     [self configPullRefresh];
 #endif
 
+}
+
+- (void)setDelegate:(id<PTTableViewDelegate>)delegate {
+     _delegate = delegate;
+    
+    self.adapter.dest = delegate;
 }
 
 - (void)registerClass:(Class)cellClass {
@@ -86,21 +89,30 @@
 }
 
 - (Class)getClass:(NSIndexPath*)indexPath {
+    if ([self.delegate respondsToSelector:@selector(getCellClass:indexPath:)])
+        return [self.delegate getCellClass:self indexPath:indexPath];
+    
     if (self.currentClass) return self.currentClass;
     return [PTTableViewCell class];
 }
 
 - (void)configCell:(PTTableViewCell*)cell indexPath:(NSIndexPath*)indexPath {
-    
+    if ([self.delegate respondsToSelector:@selector(configTableView:cell:indexPath:)])
+        [self.delegate configTableView:self cell:cell indexPath:indexPath];
 }
 
 - (id)getEntityByIndexPath:(NSIndexPath*)indexPath {
+    if ([self.delegate respondsToSelector:@selector(getEntity:indexPath:)])
+        return [self.delegate getEntity:self indexPath:indexPath];
+    
     if (indexPath.row >= self.dataArray.count) return nil;
     
     return [self.dataArray objectAtIndex:indexPath.row];
 }
 
 - (NSUInteger)getCellCount {
+    if ([self.delegate respondsToSelector:@selector(getCellCount:)])
+        return [self.delegate getCellCount:self];
     return [self.dataArray count];
 }
 
@@ -168,11 +180,15 @@
 }
 
 - (void)insertTopData {
-   
+    if ([self.delegate respondsToSelector:@selector(insertTopData:)]) {
+        [self.delegate insertTopData:self];
+    }
 }
 
 - (void)insertBottomData {
-    
+    if ([self.delegate respondsToSelector:@selector(insertBottomData:)]) {
+        [self.delegate insertBottomData:self];
+    }
 }
 
 - (void)endInsertTopData {

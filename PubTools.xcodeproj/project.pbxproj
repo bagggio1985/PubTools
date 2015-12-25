@@ -17,6 +17,8 @@
 		0E5E258719B55BA000C9D243 /* GlobalConfigTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E5E258619B55BA000C9D243 /* GlobalConfigTest.m */; };
 		0E636A2D1A6DEB7600345C56 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0E636A2C1A6DEB7600345C56 /* CoreLocation.framework */; };
 		0E786CE01C0602A9004232E7 /* PTNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E786CDF1C0602A9004232E7 /* PTNavigationController.m */; };
+		0E81BE551C2D1DB90098B98B /* PTMethodAdapter.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E81BE541C2D1DB90098B98B /* PTMethodAdapter.m */; settings = {ASSET_TAGS = (); }; };
+		0E81BE581C2D1DC60098B98B /* PTTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E81BE571C2D1DC60098B98B /* PTTableView.m */; settings = {ASSET_TAGS = (); }; };
 		0EAE65DF1C291F4200392B31 /* PTTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 0EAE65DE1C291F4200392B31 /* PTTextField.m */; settings = {ASSET_TAGS = (); }; };
 		0EAE65E21C2925B400392B31 /* PTUtility.m in Sources */ = {isa = PBXBuildFile; fileRef = 0EAE65E11C2925B400392B31 /* PTUtility.m */; settings = {ASSET_TAGS = (); }; };
 		0EAE65E81C2A66A600392B31 /* UIColor+Helper.m in Sources */ = {isa = PBXBuildFile; fileRef = 0EAE65E71C2A66A600392B31 /* UIColor+Helper.m */; settings = {ASSET_TAGS = (); }; };
@@ -124,6 +126,10 @@
 		0E636A2C1A6DEB7600345C56 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		0E786CDE1C0602A9004232E7 /* PTNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PTNavigationController.h; sourceTree = "<group>"; };
 		0E786CDF1C0602A9004232E7 /* PTNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PTNavigationController.m; sourceTree = "<group>"; };
+		0E81BE531C2D1DB90098B98B /* PTMethodAdapter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PTMethodAdapter.h; sourceTree = "<group>"; };
+		0E81BE541C2D1DB90098B98B /* PTMethodAdapter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PTMethodAdapter.m; sourceTree = "<group>"; };
+		0E81BE561C2D1DC60098B98B /* PTTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PTTableView.h; sourceTree = "<group>"; };
+		0E81BE571C2D1DC60098B98B /* PTTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PTTableView.m; sourceTree = "<group>"; };
 		0EAE65DD1C291F4200392B31 /* PTTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PTTextField.h; sourceTree = "<group>"; };
 		0EAE65DE1C291F4200392B31 /* PTTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PTTextField.m; sourceTree = "<group>"; };
 		0EAE65E01C2925B400392B31 /* PTUtility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PTUtility.h; sourceTree = "<group>"; };
@@ -428,6 +434,8 @@
 		0EEEE23B1C05EC7800A367F5 /* Tools */ = {
 			isa = PBXGroup;
 			children = (
+				0E81BE531C2D1DB90098B98B /* PTMethodAdapter.h */,
+				0E81BE541C2D1DB90098B98B /* PTMethodAdapter.m */,
 				0EAE65E01C2925B400392B31 /* PTUtility.h */,
 				0EAE65E11C2925B400392B31 /* PTUtility.m */,
 				0EEEE23C1C05EC7800A367F5 /* GlobalConfig.h */,
@@ -443,6 +451,8 @@
 		0EEEE2421C05EC7800A367F5 /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				0E81BE561C2D1DC60098B98B /* PTTableView.h */,
+				0E81BE571C2D1DC60098B98B /* PTTableView.m */,
 				0EEEE2EE1C05EDEA00A367F5 /* PTBaseViewController.h */,
 				0EEEE2EF1C05EDEA00A367F5 /* PTBaseViewController.m */,
 				0E786CDE1C0602A9004232E7 /* PTNavigationController.h */,
@@ -739,6 +749,7 @@
 				0EEEE2C41C05EC7800A367F5 /* AFNetworkReachabilityManager.m in Sources */,
 				0EEEE2CD1C05EC7800A367F5 /* MASConstraintMaker.m in Sources */,
 				0EAE65DF1C291F4200392B31 /* PTTextField.m in Sources */,
+				0E81BE581C2D1DC60098B98B /* PTTableView.m in Sources */,
 				0EEEE2F01C05EDEA00A367F5 /* PTBaseViewController.m in Sources */,
 				0EEEE2E51C05EC7800A367F5 /* UIView+WebCacheOperation.m in Sources */,
 				0EEEE2D11C05EC7800A367F5 /* NSArray+MASAdditions.m in Sources */,
@@ -771,6 +782,7 @@
 				0EEEE2DF1C05EC7800A367F5 /* UIButton+WebCache.m in Sources */,
 				0EEEE2C01C05EC7800A367F5 /* PTTableViewController.m in Sources */,
 				0EAE65E21C2925B400392B31 /* PTUtility.m in Sources */,
+				0E81BE551C2D1DB90098B98B /* PTMethodAdapter.m in Sources */,
 				0EEEE2E41C05EC7800A367F5 /* UIImageView+WebCache.m in Sources */,
 				0EEEE2CC1C05EC7800A367F5 /* MASConstraint.m in Sources */,
 				0EEEE2DB1C05EC7800A367F5 /* SDWebImageDownloader.m in Sources */,

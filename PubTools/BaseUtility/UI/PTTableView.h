@@ -53,6 +53,19 @@ typedef NS_ENUM(NSInteger, kPTTableViewPullRefresh) {
 
 @end
 
-@protocol PTTableViewDelegate <NSObject>
+// 如果需要使用UITableViewDataSource，UITableViewDelegate的一些optional方法，在这个方法中实现，
+// 不要设置uitableview对应的delegate
+@protocol PTTableViewDelegate <UITableViewDataSource, UITableViewDelegate>
+
+@optional
+// 以下的方法一一对应PTTableView的方法
+- (void)insertTopData:(PTTableView*)tableView;
+- (void)insertBottomData:(PTTableView*)tableView;
+
+- (Class)getCellClass:(PTTableView*)tableView indexPath:(NSIndexPath*)indexPath;
+- (void)configTableView:(PTTableView*)tableView cell:(PTTableViewCell*)cell indexPath:(NSIndexPath*)indexPath;
+// 该方法会默认获取dataArray的数量，如果需定制重写该方法
+- (NSUInteger)getCellCount:(PTTableView*)tableView;
+- (id)getEntity:(PTTableView*)tableView indexPath:(NSIndexPath*)indexPath;
 
 @end
