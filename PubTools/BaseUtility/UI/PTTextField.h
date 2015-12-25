@@ -17,4 +17,6 @@
  */
 @property (nonatomic, assign) CGPoint insetsXY;
 
+@property (nonatomic, assign) NSUInteger textLimit; // 设置TextField的字数限制
+
 @end
