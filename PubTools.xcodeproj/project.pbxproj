@@ -18,7 +18,7 @@
 		0E636A2D1A6DEB7600345C56 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0E636A2C1A6DEB7600345C56 /* CoreLocation.framework */; };
 		0E786CE01C0602A9004232E7 /* PTNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E786CDF1C0602A9004232E7 /* PTNavigationController.m */; };
 		0E81BE551C2D1DB90098B98B /* PTMethodAdapter.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E81BE541C2D1DB90098B98B /* PTMethodAdapter.m */; settings = {ASSET_TAGS = (); }; };
-		0E81BE581C2D1DC60098B98B /* PTTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E81BE571C2D1DC60098B98B /* PTTableView.m */; settings = {ASSET_TAGS = (); }; };
+		0E81BE5C1C2D24350098B98B /* PTTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E81BE5B1C2D24350098B98B /* PTTableView.m */; settings = {ASSET_TAGS = (); }; };
 		0EAE65DF1C291F4200392B31 /* PTTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 0EAE65DE1C291F4200392B31 /* PTTextField.m */; settings = {ASSET_TAGS = (); }; };
 		0EAE65E21C2925B400392B31 /* PTUtility.m in Sources */ = {isa = PBXBuildFile; fileRef = 0EAE65E11C2925B400392B31 /* PTUtility.m */; settings = {ASSET_TAGS = (); }; };
 		0EAE65E81C2A66A600392B31 /* UIColor+Helper.m in Sources */ = {isa = PBXBuildFile; fileRef = 0EAE65E71C2A66A600392B31 /* UIColor+Helper.m */; settings = {ASSET_TAGS = (); }; };
@@ -128,8 +128,9 @@
 		0E786CDF1C0602A9004232E7 /* PTNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PTNavigationController.m; sourceTree = "<group>"; };
 		0E81BE531C2D1DB90098B98B /* PTMethodAdapter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PTMethodAdapter.h; sourceTree = "<group>"; };
 		0E81BE541C2D1DB90098B98B /* PTMethodAdapter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PTMethodAdapter.m; sourceTree = "<group>"; };
-		0E81BE561C2D1DC60098B98B /* PTTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PTTableView.h; sourceTree = "<group>"; };
-		0E81BE571C2D1DC60098B98B /* PTTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PTTableView.m; sourceTree = "<group>"; };
+		0E81BE591C2D24180098B98B /* PTTableViewConst.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PTTableViewConst.h; sourceTree = "<group>"; };
+		0E81BE5A1C2D24350098B98B /* PTTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PTTableView.h; sourceTree = "<group>"; };
+		0E81BE5B1C2D24350098B98B /* PTTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PTTableView.m; sourceTree = "<group>"; };
 		0EAE65DD1C291F4200392B31 /* PTTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PTTextField.h; sourceTree = "<group>"; };
 		0EAE65DE1C291F4200392B31 /* PTTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PTTextField.m; sourceTree = "<group>"; };
 		0EAE65E01C2925B400392B31 /* PTUtility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PTUtility.h; sourceTree = "<group>"; };
@@ -451,8 +452,6 @@
 		0EEEE2421C05EC7800A367F5 /* UI */ = {
 			isa = PBXGroup;
 			children = (
-				0E81BE561C2D1DC60098B98B /* PTTableView.h */,
-				0E81BE571C2D1DC60098B98B /* PTTableView.m */,
 				0EEEE2EE1C05EDEA00A367F5 /* PTBaseViewController.h */,
 				0EEEE2EF1C05EDEA00A367F5 /* PTBaseViewController.m */,
 				0E786CDE1C0602A9004232E7 /* PTNavigationController.h */,
@@ -471,10 +470,13 @@
 		0EEEE2451C05EC7800A367F5 /* TableViewController */ = {
 			isa = PBXGroup;
 			children = (
+				0E81BE5A1C2D24350098B98B /* PTTableView.h */,
+				0E81BE5B1C2D24350098B98B /* PTTableView.m */,
 				0EEEE2461C05EC7800A367F5 /* PTTableViewCell.h */,
 				0EEEE2471C05EC7800A367F5 /* PTTableViewCell.m */,
 				0EEEE2481C05EC7800A367F5 /* PTTableViewController.h */,
 				0EEEE2491C05EC7800A367F5 /* PTTableViewController.m */,
+				0E81BE591C2D24180098B98B /* PTTableViewConst.h */,
 			);
 			path = TableViewController;
 			sourceTree = "<group>";
@@ -749,7 +751,7 @@
 				0EEEE2C41C05EC7800A367F5 /* AFNetworkReachabilityManager.m in Sources */,
 				0EEEE2CD1C05EC7800A367F5 /* MASConstraintMaker.m in Sources */,
 				0EAE65DF1C291F4200392B31 /* PTTextField.m in Sources */,
-				0E81BE581C2D1DC60098B98B /* PTTableView.m in Sources */,
+				0E81BE5C1C2D24350098B98B /* PTTableView.m in Sources */,
 				0EEEE2F01C05EDEA00A367F5 /* PTBaseViewController.m in Sources */,
 				0EEEE2E51C05EC7800A367F5 /* UIView+WebCacheOperation.m in Sources */,
 				0EEEE2D11C05EC7800A367F5 /* NSArray+MASAdditions.m in Sources */,
