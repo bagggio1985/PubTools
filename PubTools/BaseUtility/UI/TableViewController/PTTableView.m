@@ -1,6 +1,5 @@
 //
 //  PTTableView.m
-//  TestTableViewController
 //
 //  Created by kyao on 15/12/24.
 //  Copyright © 2015年 mac. All rights reserved.

@@ -1,6 +1,5 @@
 //
 //  PTMethodAdapter.h
-//  TestTableViewController
 //
 //  Created by kyao on 15/12/25.
 //  Copyright © 2015年 mac. All rights reserved.

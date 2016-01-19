@@ -1,6 +1,5 @@
 //
 //  PBObjectCoding.m
-//  ViewSwitch
 //
 //  Created by kyao on 14-4-1.
 //

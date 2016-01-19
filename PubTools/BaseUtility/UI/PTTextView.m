@@ -1,6 +1,5 @@
 //
 //  PTTextView.m
-//  PubTools
 //
 //  Created by kyao on 15/12/23.
 //
@@ -102,7 +101,7 @@ static CGFloat const kLabelTopOffsetRetina = 0.5f;
     
     CGFloat labelLeftOffset = kLabelLeftOffset;
     CGFloat labelTopOffset = self.topLabelOffset;
-        if ([[UIScreen mainScreen] scale] >= 2.0) {
+    if ([[UIScreen mainScreen] scale] >= 2.0) {
         labelTopOffset += kLabelTopOffsetRetina;
     }
     
