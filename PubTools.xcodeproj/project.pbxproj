@@ -19,6 +19,7 @@
 		0E786CE01C0602A9004232E7 /* PTNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E786CDF1C0602A9004232E7 /* PTNavigationController.m */; };
 		0E81BE551C2D1DB90098B98B /* PTMethodAdapter.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E81BE541C2D1DB90098B98B /* PTMethodAdapter.m */; settings = {ASSET_TAGS = (); }; };
 		0E81BE5C1C2D24350098B98B /* PTTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E81BE5B1C2D24350098B98B /* PTTableView.m */; settings = {ASSET_TAGS = (); }; };
+		0E891AED1C4E06C2006F6EA6 /* PTMenuHorizontal.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E891AEC1C4E06C2006F6EA6 /* PTMenuHorizontal.m */; settings = {ASSET_TAGS = (); }; };
 		0EAE65DF1C291F4200392B31 /* PTTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 0EAE65DE1C291F4200392B31 /* PTTextField.m */; settings = {ASSET_TAGS = (); }; };
 		0EAE65E21C2925B400392B31 /* PTUtility.m in Sources */ = {isa = PBXBuildFile; fileRef = 0EAE65E11C2925B400392B31 /* PTUtility.m */; settings = {ASSET_TAGS = (); }; };
 		0EAE65E81C2A66A600392B31 /* UIColor+Helper.m in Sources */ = {isa = PBXBuildFile; fileRef = 0EAE65E71C2A66A600392B31 /* UIColor+Helper.m */; settings = {ASSET_TAGS = (); }; };
@@ -131,6 +132,8 @@
 		0E81BE591C2D24180098B98B /* PTTableViewConst.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PTTableViewConst.h; sourceTree = "<group>"; };
 		0E81BE5A1C2D24350098B98B /* PTTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PTTableView.h; sourceTree = "<group>"; };
 		0E81BE5B1C2D24350098B98B /* PTTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PTTableView.m; sourceTree = "<group>"; };
+		0E891AEB1C4E06C2006F6EA6 /* PTMenuHorizontal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PTMenuHorizontal.h; sourceTree = "<group>"; };
+		0E891AEC1C4E06C2006F6EA6 /* PTMenuHorizontal.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PTMenuHorizontal.m; sourceTree = "<group>"; };
 		0EAE65DD1C291F4200392B31 /* PTTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PTTextField.h; sourceTree = "<group>"; };
 		0EAE65DE1C291F4200392B31 /* PTTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PTTextField.m; sourceTree = "<group>"; };
 		0EAE65E01C2925B400392B31 /* PTUtility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PTUtility.h; sourceTree = "<group>"; };
@@ -452,6 +455,8 @@
 		0EEEE2421C05EC7800A367F5 /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				0E891AEB1C4E06C2006F6EA6 /* PTMenuHorizontal.h */,
+				0E891AEC1C4E06C2006F6EA6 /* PTMenuHorizontal.m */,
 				0EEEE2EE1C05EDEA00A367F5 /* PTBaseViewController.h */,
 				0EEEE2EF1C05EDEA00A367F5 /* PTBaseViewController.m */,
 				0E786CDE1C0602A9004232E7 /* PTNavigationController.h */,
@@ -763,6 +768,7 @@
 				0EEEE2BA1C05EC7800A367F5 /* PBDataStorage.m in Sources */,
 				0EEEE2D91C05EC7800A367F5 /* SDWebImageCompat.m in Sources */,
 				0EEEE2E11C05EC7800A367F5 /* UIImage+MultiFormat.m in Sources */,
+				0E891AED1C4E06C2006F6EA6 /* PTMenuHorizontal.m in Sources */,
 				0EEEE2C61C05EC7800A367F5 /* AFURLConnectionOperation.m in Sources */,
 				0EEEE2C81C05EC7800A367F5 /* AFURLResponseSerialization.m in Sources */,
 				0EEEE2E21C05EC7800A367F5 /* UIImage+WebP.m in Sources */,

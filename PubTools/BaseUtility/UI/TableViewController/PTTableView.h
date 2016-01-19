@@ -36,6 +36,7 @@
 // 用来判断是否需要显示下一页
 @property (nonatomic, assign) BOOL stillHaveData;
 
+- (void)forceRefresh;
 - (void)insertTopData;
 - (void)insertBottomData;
 - (void)endInsertTopData;
