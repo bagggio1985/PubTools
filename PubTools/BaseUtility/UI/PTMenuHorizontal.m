@@ -45,9 +45,7 @@
 }
 
 - (void)setTitleArray:(NSArray<NSString*> *)titles {
-    // 删除之前存在的button
-    [self.buttonArray makeObjectsPerformSelector:@selector(removeFromSuperview)];
-    [self.buttonArray removeAllObjects];
+    [self resetMenu];
     self.menuTitleArray = titles;
     [self createButtons:titles];
 }
@@ -70,6 +68,15 @@
     self.highlightColor = [UIColor colorWithRed:17.f/255.f green:210.f/255.f blue:162.f/255.f alpha:1];
     self.backgroundColor = [UIColor whiteColor];
     self.buttonArray = [NSMutableArray new];
+}
+
+- (void)resetMenu {
+    // 清空数据
+    self.selectedButton = nil;
+    [self.buttonArray makeObjectsPerformSelector:@selector(removeFromSuperview)];
+    [self.buttonArray removeAllObjects];
+    [self.scrollView removeFromSuperview];
+    [self.highlightView removeFromSuperview];
     
     UIScrollView* scrollView = [UIScrollView new];
     scrollView.backgroundColor = self.backgroundColor;
