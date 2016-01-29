@@ -45,7 +45,7 @@
 }
 
 - (void)setTitleArray:(NSArray<NSString*> *)titles {
-    [self resetMenu];
+    [self cleanMenu];
     self.menuTitleArray = titles;
     [self createButtons:titles];
 }
@@ -68,15 +68,11 @@
     self.highlightColor = [UIColor colorWithRed:17.f/255.f green:210.f/255.f blue:162.f/255.f alpha:1];
     self.backgroundColor = [UIColor whiteColor];
     self.buttonArray = [NSMutableArray new];
+    
+    [self setupMenu];
 }
 
-- (void)resetMenu {
-    // 清空数据
-    self.selectedButton = nil;
-    [self.buttonArray makeObjectsPerformSelector:@selector(removeFromSuperview)];
-    [self.buttonArray removeAllObjects];
-    [self.scrollView removeFromSuperview];
-    [self.highlightView removeFromSuperview];
+- (void)setupMenu {
     
     UIScrollView* scrollView = [UIScrollView new];
     scrollView.backgroundColor = self.backgroundColor;
@@ -99,6 +95,12 @@
         make.height.mas_equalTo(0);
         make.left.mas_equalTo(0);
     }];
+}
+
+- (void)cleanMenu {
+    self.selectedButton = nil;
+    [self.buttonArray makeObjectsPerformSelector:@selector(removeFromSuperview)];
+    [self.buttonArray removeAllObjects];
 }
 
 - (void)createButtons:(NSArray*)titles {
@@ -141,6 +143,7 @@
     self.selectedButton.selected = NO;
     self.selectedButton = button;
     button.selected = YES;
+    [self layoutIfNeeded];
     [self.highlightView mas_remakeConstraints:^(MASConstraintMaker *make) {
         make.bottom.equalTo(button.mas_bottom);
         make.width.mas_equalTo(button.titleLabel);
