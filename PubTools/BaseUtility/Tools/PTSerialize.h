@@ -11,3 +11,10 @@
 @interface PTSerialize : NSObject <NSCoding>
 
 @end
+
+@interface NSObject (PTSerialize)
+
+- (void)decode:(NSCoder*)aDecoder;
+- (void)encode:(NSCoder*)aEncoder;
+
+@end
