@@ -17,13 +17,15 @@
 		0E5E258719B55BA000C9D243 /* GlobalConfigTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E5E258619B55BA000C9D243 /* GlobalConfigTest.m */; };
 		0E636A2D1A6DEB7600345C56 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0E636A2C1A6DEB7600345C56 /* CoreLocation.framework */; };
 		0E786CE01C0602A9004232E7 /* PTNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E786CDF1C0602A9004232E7 /* PTNavigationController.m */; };
-		0E81BE551C2D1DB90098B98B /* PTMethodAdapter.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E81BE541C2D1DB90098B98B /* PTMethodAdapter.m */; settings = {ASSET_TAGS = (); }; };
-		0E81BE5C1C2D24350098B98B /* PTTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E81BE5B1C2D24350098B98B /* PTTableView.m */; settings = {ASSET_TAGS = (); }; };
-		0E891AED1C4E06C2006F6EA6 /* PTMenuHorizontal.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E891AEC1C4E06C2006F6EA6 /* PTMenuHorizontal.m */; settings = {ASSET_TAGS = (); }; };
-		0EAE65DF1C291F4200392B31 /* PTTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 0EAE65DE1C291F4200392B31 /* PTTextField.m */; settings = {ASSET_TAGS = (); }; };
-		0EAE65E21C2925B400392B31 /* PTUtility.m in Sources */ = {isa = PBXBuildFile; fileRef = 0EAE65E11C2925B400392B31 /* PTUtility.m */; settings = {ASSET_TAGS = (); }; };
-		0EAE65E81C2A66A600392B31 /* UIColor+Helper.m in Sources */ = {isa = PBXBuildFile; fileRef = 0EAE65E71C2A66A600392B31 /* UIColor+Helper.m */; settings = {ASSET_TAGS = (); }; };
-		0EAE65EB1C2A6EB600392B31 /* PTTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0EAE65EA1C2A6EB600392B31 /* PTTextView.m */; settings = {ASSET_TAGS = (); }; };
+		0E81BE551C2D1DB90098B98B /* PTMethodAdapter.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E81BE541C2D1DB90098B98B /* PTMethodAdapter.m */; };
+		0E81BE5C1C2D24350098B98B /* PTTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E81BE5B1C2D24350098B98B /* PTTableView.m */; };
+		0E891AED1C4E06C2006F6EA6 /* PTMenuHorizontal.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E891AEC1C4E06C2006F6EA6 /* PTMenuHorizontal.m */; };
+		0EAE65DF1C291F4200392B31 /* PTTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 0EAE65DE1C291F4200392B31 /* PTTextField.m */; };
+		0EAE65E21C2925B400392B31 /* PTUtility.m in Sources */ = {isa = PBXBuildFile; fileRef = 0EAE65E11C2925B400392B31 /* PTUtility.m */; };
+		0EAE65E81C2A66A600392B31 /* UIColor+Helper.m in Sources */ = {isa = PBXBuildFile; fileRef = 0EAE65E71C2A66A600392B31 /* UIColor+Helper.m */; };
+		0EAE65EB1C2A6EB600392B31 /* PTTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0EAE65EA1C2A6EB600392B31 /* PTTextView.m */; };
+		0ECB89A91C77008B001DE48B /* FBKVOController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0ECB89A61C77008B001DE48B /* FBKVOController.m */; };
+		0ECB89AA1C77008B001DE48B /* NSObject+FBKVOController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0ECB89A81C77008B001DE48B /* NSObject+FBKVOController.m */; };
 		0EEEE2B01C05EC7800A367F5 /* NSDictionary+Helper.m in Sources */ = {isa = PBXBuildFile; fileRef = 0EEEE2231C05EC7800A367F5 /* NSDictionary+Helper.m */; };
 		0EEEE2B11C05EC7800A367F5 /* NSObject+ARC.m in Sources */ = {isa = PBXBuildFile; fileRef = 0EEEE2251C05EC7800A367F5 /* NSObject+ARC.m */; };
 		0EEEE2B21C05EC7800A367F5 /* NSString+Helper.m in Sources */ = {isa = PBXBuildFile; fileRef = 0EEEE2271C05EC7800A367F5 /* NSString+Helper.m */; };
@@ -142,6 +144,10 @@
 		0EAE65E71C2A66A600392B31 /* UIColor+Helper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+Helper.m"; sourceTree = "<group>"; };
 		0EAE65E91C2A6EB600392B31 /* PTTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PTTextView.h; sourceTree = "<group>"; };
 		0EAE65EA1C2A6EB600392B31 /* PTTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PTTextView.m; sourceTree = "<group>"; };
+		0ECB89A51C77008B001DE48B /* FBKVOController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FBKVOController.h; sourceTree = "<group>"; };
+		0ECB89A61C77008B001DE48B /* FBKVOController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FBKVOController.m; sourceTree = "<group>"; };
+		0ECB89A71C77008B001DE48B /* NSObject+FBKVOController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+FBKVOController.h"; sourceTree = "<group>"; };
+		0ECB89A81C77008B001DE48B /* NSObject+FBKVOController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+FBKVOController.m"; sourceTree = "<group>"; };
 		0EEEE2221C05EC7800A367F5 /* NSDictionary+Helper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+Helper.h"; sourceTree = "<group>"; };
 		0EEEE2231C05EC7800A367F5 /* NSDictionary+Helper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+Helper.m"; sourceTree = "<group>"; };
 		0EEEE2241C05EC7800A367F5 /* NSObject+ARC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+ARC.h"; sourceTree = "<group>"; };
@@ -391,16 +397,20 @@
 		0EEEE2211C05EC7800A367F5 /* Category */ = {
 			isa = PBXGroup;
 			children = (
+				0ECB89A51C77008B001DE48B /* FBKVOController.h */,
+				0ECB89A61C77008B001DE48B /* FBKVOController.m */,
+				0ECB89A71C77008B001DE48B /* NSObject+FBKVOController.h */,
+				0ECB89A81C77008B001DE48B /* NSObject+FBKVOController.m */,
 				0EEEE2221C05EC7800A367F5 /* NSDictionary+Helper.h */,
 				0EEEE2231C05EC7800A367F5 /* NSDictionary+Helper.m */,
 				0EEEE2241C05EC7800A367F5 /* NSObject+ARC.h */,
 				0EEEE2251C05EC7800A367F5 /* NSObject+ARC.m */,
 				0EEEE2261C05EC7800A367F5 /* NSString+Helper.h */,
 				0EEEE2271C05EC7800A367F5 /* NSString+Helper.m */,
-				0EEEE2281C05EC7800A367F5 /* UIImage+Helper.h */,
-				0EEEE2291C05EC7800A367F5 /* UIImage+Helper.m */,
 				0EAE65E61C2A66A600392B31 /* UIColor+Helper.h */,
 				0EAE65E71C2A66A600392B31 /* UIColor+Helper.m */,
+				0EEEE2281C05EC7800A367F5 /* UIImage+Helper.h */,
+				0EEEE2291C05EC7800A367F5 /* UIImage+Helper.m */,
 			);
 			path = Category;
 			sourceTree = "<group>";
@@ -746,6 +756,7 @@
 				0EEEE2E91C05EC7800A367F5 /* UITableView+FDKeyedHeightCache.m in Sources */,
 				0EEEE2DC1C05EC7800A367F5 /* SDWebImageDownloaderOperation.m in Sources */,
 				0EEEE2B01C05EC7800A367F5 /* NSDictionary+Helper.m in Sources */,
+				0ECB89AA1C77008B001DE48B /* NSObject+FBKVOController.m in Sources */,
 				0EEEE2C31C05EC7800A367F5 /* AFHTTPSessionManager.m in Sources */,
 				0EEEE2D31C05EC7800A367F5 /* View+MASAdditions.m in Sources */,
 				0EEEE2B91C05EC7800A367F5 /* PBDataModel.m in Sources */,
@@ -792,6 +803,7 @@
 				0EAE65E21C2925B400392B31 /* PTUtility.m in Sources */,
 				0E81BE551C2D1DB90098B98B /* PTMethodAdapter.m in Sources */,
 				0EEEE2E41C05EC7800A367F5 /* UIImageView+WebCache.m in Sources */,
+				0ECB89A91C77008B001DE48B /* FBKVOController.m in Sources */,
 				0EEEE2CC1C05EC7800A367F5 /* MASConstraint.m in Sources */,
 				0EEEE2DB1C05EC7800A367F5 /* SDWebImageDownloader.m in Sources */,
 				0EEEE2F71C05F04600A367F5 /* MBProgressHUD.m in Sources */,

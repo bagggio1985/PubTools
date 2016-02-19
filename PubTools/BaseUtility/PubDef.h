@@ -19,6 +19,7 @@
     #import "NSString+Helper.h"
     #import "NSDictionary+Helper.h"
     #import "PTUtility.h"
+    #import "NSObject+FBKVOController.h"
 
     // ThirdParty
 
