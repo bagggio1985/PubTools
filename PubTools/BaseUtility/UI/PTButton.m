@@ -11,6 +11,7 @@
 
 @property (nonatomic, assign) PTImagePosition position;
 @property (nonatomic, assign) CGFloat spacing;
+@property (nonatomic, assign) CGFloat margin;
 
 @end
 
@@ -42,16 +43,50 @@
     CGFloat totolHeight = imageHeight + labelHeight + self.spacing;
     CGFloat margin = (CGRectGetHeight(self.frame) - totolHeight) / 2;
     
-    
     switch (self.position) {
         case PTImagePositionLeft:
-            self.imageEdgeInsets = UIEdgeInsetsMake(0, -spacing/2, 0, spacing/2);
-            self.titleEdgeInsets = UIEdgeInsetsMake(0, spacing/2, 0, -spacing/2);
+            switch (self.contentHorizontalAlignment) {
+                case UIControlContentHorizontalAlignmentLeft:
+                {
+                    self.imageEdgeInsets = UIEdgeInsetsMake(0, self.margin, 0, -self.margin);
+                    self.titleEdgeInsets = UIEdgeInsetsMake(0, spacing+self.margin, 0, -spacing-self.margin);
+                }
+                    break;
+                case UIControlContentHorizontalAlignmentRight:
+                {
+                    self.imageEdgeInsets = UIEdgeInsetsMake(0, -spacing-self.margin, 0, spacing+self.margin);
+                    self.titleEdgeInsets = UIEdgeInsetsMake(0, -self.margin, 0, self.margin);
+                }
+                    break;
+                default:
+                {
+                    self.imageEdgeInsets = UIEdgeInsetsMake(0, -spacing/2, 0, spacing/2);
+                    self.titleEdgeInsets = UIEdgeInsetsMake(0, spacing/2, 0, -spacing/2);
+                }
+                    break;
+            }
             break;
             
         case PTImagePositionRight:
-            self.imageEdgeInsets = UIEdgeInsetsMake(0, labelWidth + spacing/2, 0, -(labelWidth + spacing/2));
-            self.titleEdgeInsets = UIEdgeInsetsMake(0, -(imageHeight + spacing/2), 0, imageHeight + spacing/2);
+            
+            switch (self.contentHorizontalAlignment) {
+                case UIControlContentHorizontalAlignmentLeft:
+                {
+                    self.imageEdgeInsets = UIEdgeInsetsMake(0, labelWidth + spacing + self.margin, 0, -(labelWidth + spacing + self.margin));
+                    self.titleEdgeInsets = UIEdgeInsetsMake(0, -imageWith + self.margin, 0, imageWith - self.margin);
+                }
+                    break;
+                case UIControlContentHorizontalAlignmentRight:
+                {
+                    self.imageEdgeInsets = UIEdgeInsetsMake(0, labelWidth - self.margin, 0, -labelWidth + self.margin);
+                    self.titleEdgeInsets = UIEdgeInsetsMake(0, -(imageWith + spacing + self.margin), 0, imageWith + spacing + self.margin);
+                }
+                    break;
+                default:
+                    self.imageEdgeInsets = UIEdgeInsetsMake(0, labelWidth + spacing/2, 0, -(labelWidth + spacing/2));
+                    self.titleEdgeInsets = UIEdgeInsetsMake(0, -(imageWith + spacing/2), 0, imageWith + spacing/2);
+                    break;
+            }
             break;
             
         case PTImagePositionTop:
@@ -71,6 +106,11 @@
         default:
             break;
     }
+    
+}
+
+- (void)setMargin:(CGFloat)margin {
+    _margin = margin;
 }
 
 - (void)setImagePosition:(PTImagePosition)postion spacing:(CGFloat)spacing; {

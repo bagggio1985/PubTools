@@ -18,5 +18,6 @@ typedef NS_ENUM(NSInteger, PTImagePosition) {
 @interface PTButton : UIButton
 
 - (void)setImagePosition:(PTImagePosition)postion spacing:(CGFloat)spacing;
+- (void)setMargin:(CGFloat)margin; // 设置靠左还是靠右的距离
 
 @end
