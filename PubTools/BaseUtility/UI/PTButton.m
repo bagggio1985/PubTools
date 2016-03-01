@@ -25,6 +25,9 @@
 }
 
 - (void)setupImagePosition {
+    
+    CGFloat spacing = self.spacing;
+    
     CGFloat imageWith = self.imageView.image.size.width;
     CGFloat imageHeight = self.imageView.image.size.height;
 
@@ -32,14 +35,14 @@
     CGFloat labelHeight = [self.titleLabel.text estimateSizeWithFont:self.titleLabel.font].height;
     
     CGFloat imageOffsetX = (imageWith + labelWidth) / 2 - imageWith / 2;//image中心移动的x距离
-    CGFloat imageOffsetY = imageHeight / 2 + self.spacing / 2;//image中心移动的y距离
+    CGFloat imageOffsetY = imageHeight / 2 + spacing / 2;//image中心移动的y距离
     CGFloat labelOffsetX = (imageWith + labelWidth / 2) - (imageWith + labelWidth) / 2;//label中心移动的x距离
-    CGFloat labelOffsetY = labelHeight / 2 + self.spacing / 2;//label中心移动的y距离
+    CGFloat labelOffsetY = labelHeight / 2 + spacing / 2;//label中心移动的y距离
     
     CGFloat totolHeight = imageHeight + labelHeight + self.spacing;
     CGFloat margin = (CGRectGetHeight(self.frame) - totolHeight) / 2;
     
-    CGFloat spacing = self.spacing;
+    
     switch (self.position) {
         case PTImagePositionLeft:
             self.imageEdgeInsets = UIEdgeInsetsMake(0, -spacing/2, 0, spacing/2);
