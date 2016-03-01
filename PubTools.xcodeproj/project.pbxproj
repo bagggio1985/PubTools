@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0E231AC81C85816300D32945 /* PTButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E231AC71C85816300D32945 /* PTButton.m */; };
 		0E5E254E19B5586C00C9D243 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0E5E254D19B5586C00C9D243 /* Foundation.framework */; };
 		0E5E255C19B5586C00C9D243 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0E5E255B19B5586C00C9D243 /* XCTest.framework */; };
 		0E5E255D19B5586C00C9D243 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0E5E254D19B5586C00C9D243 /* Foundation.framework */; };
@@ -116,6 +117,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		0E231AC61C85816300D32945 /* PTButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PTButton.h; sourceTree = "<group>"; };
+		0E231AC71C85816300D32945 /* PTButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PTButton.m; sourceTree = "<group>"; };
 		0E5E254A19B5586C00C9D243 /* libPubTools.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPubTools.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		0E5E254D19B5586C00C9D243 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		0E5E255119B5586C00C9D243 /* PubTools-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "PubTools-Prefix.pch"; sourceTree = "<group>"; };
@@ -467,6 +470,8 @@
 			children = (
 				0E891AEB1C4E06C2006F6EA6 /* PTMenuHorizontal.h */,
 				0E891AEC1C4E06C2006F6EA6 /* PTMenuHorizontal.m */,
+				0E231AC61C85816300D32945 /* PTButton.h */,
+				0E231AC71C85816300D32945 /* PTButton.m */,
 				0EEEE2EE1C05EDEA00A367F5 /* PTBaseViewController.h */,
 				0EEEE2EF1C05EDEA00A367F5 /* PTBaseViewController.m */,
 				0E786CDE1C0602A9004232E7 /* PTNavigationController.h */,
@@ -776,6 +781,7 @@
 				0EEEE2EA1C05EC7800A367F5 /* UITableView+FDTemplateLayoutCell.m in Sources */,
 				0EEEE2C91C05EC7800A367F5 /* AFURLSessionManager.m in Sources */,
 				0EEEE2B21C05EC7800A367F5 /* NSString+Helper.m in Sources */,
+				0E231AC81C85816300D32945 /* PTButton.m in Sources */,
 				0EEEE2BA1C05EC7800A367F5 /* PBDataStorage.m in Sources */,
 				0EEEE2D91C05EC7800A367F5 /* SDWebImageCompat.m in Sources */,
 				0EEEE2E11C05EC7800A367F5 /* UIImage+MultiFormat.m in Sources */,

@@ -188,6 +188,26 @@
 
 @end
 
+@implementation NSString (Size)
+
+- (CGSize)estimateSizeWithFont:(UIFont*)font {
+#if __IPHONE_OS_VERSION_MIN_REQUIRED >= 70000
+    return [self length] ? [self sizeWithAttributes:@{NSFontAttributeName:font}] : CGSizeZero;
+#else
+    return [self length] ? [self sizeWithFont:font] : CGSizeZero;
+#endif
+}
+
+- (CGSize)estimateSizeWithFont:(UIFont *)font forWidth:(CGFloat)width lineBreakMode:(NSLineBreakMode)lineBreakMode {
+#if __IPHONE_OS_VERSION_MIN_REQUIRED >= 70000
+    return [self length] > 0 ? [self boundingRectWithSize:CGSizeMake(width, NSUIntegerMax) options:(NSStringDrawingUsesLineFragmentOrigin) attributes:@{NSFontAttributeName:font} context:nil].size : CGSizeZero;
+#else
+    return [self length] > 0 ? [self sizeWithFont:font constrainedToSize:CGSizeMake(width, NSUIntegerMax) lineBreakMode:mode] : CGSizeZero;
+#endif
+}
+
+@end
+
 @implementation NSString (PTPath)
 
 + (instancetype)documentPath {

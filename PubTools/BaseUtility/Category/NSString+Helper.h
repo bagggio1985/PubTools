@@ -49,6 +49,13 @@
 
 @end
 
+@interface NSString (Size)
+
+- (CGSize)estimateSizeWithFont:(UIFont*)font;
+- (CGSize)estimateSizeWithFont:(UIFont *)font forWidth:(CGFloat)width lineBreakMode:(NSLineBreakMode)lineBreakMode;
+
+@end
+
 @interface NSString (PTPath)
 
 + (instancetype)documentPath;
