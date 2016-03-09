@@ -27,6 +27,7 @@
 		0EAE65EB1C2A6EB600392B31 /* PTTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0EAE65EA1C2A6EB600392B31 /* PTTextView.m */; };
 		0ECB89A91C77008B001DE48B /* FBKVOController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0ECB89A61C77008B001DE48B /* FBKVOController.m */; };
 		0ECB89AA1C77008B001DE48B /* NSObject+FBKVOController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0ECB89A81C77008B001DE48B /* NSObject+FBKVOController.m */; };
+		0EE6D7DD1C8FD97800F5EC74 /* PTBannerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0EE6D7DC1C8FD97800F5EC74 /* PTBannerView.m */; };
 		0EEEE2B01C05EC7800A367F5 /* NSDictionary+Helper.m in Sources */ = {isa = PBXBuildFile; fileRef = 0EEEE2231C05EC7800A367F5 /* NSDictionary+Helper.m */; };
 		0EEEE2B11C05EC7800A367F5 /* NSObject+ARC.m in Sources */ = {isa = PBXBuildFile; fileRef = 0EEEE2251C05EC7800A367F5 /* NSObject+ARC.m */; };
 		0EEEE2B21C05EC7800A367F5 /* NSString+Helper.m in Sources */ = {isa = PBXBuildFile; fileRef = 0EEEE2271C05EC7800A367F5 /* NSString+Helper.m */; };
@@ -151,6 +152,8 @@
 		0ECB89A61C77008B001DE48B /* FBKVOController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FBKVOController.m; sourceTree = "<group>"; };
 		0ECB89A71C77008B001DE48B /* NSObject+FBKVOController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+FBKVOController.h"; sourceTree = "<group>"; };
 		0ECB89A81C77008B001DE48B /* NSObject+FBKVOController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+FBKVOController.m"; sourceTree = "<group>"; };
+		0EE6D7DB1C8FD97800F5EC74 /* PTBannerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PTBannerView.h; sourceTree = "<group>"; };
+		0EE6D7DC1C8FD97800F5EC74 /* PTBannerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PTBannerView.m; sourceTree = "<group>"; };
 		0EEEE2221C05EC7800A367F5 /* NSDictionary+Helper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+Helper.h"; sourceTree = "<group>"; };
 		0EEEE2231C05EC7800A367F5 /* NSDictionary+Helper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+Helper.m"; sourceTree = "<group>"; };
 		0EEEE2241C05EC7800A367F5 /* NSObject+ARC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+ARC.h"; sourceTree = "<group>"; };
@@ -468,21 +471,23 @@
 		0EEEE2421C05EC7800A367F5 /* UI */ = {
 			isa = PBXGroup;
 			children = (
-				0E891AEB1C4E06C2006F6EA6 /* PTMenuHorizontal.h */,
-				0E891AEC1C4E06C2006F6EA6 /* PTMenuHorizontal.m */,
-				0E231AC61C85816300D32945 /* PTButton.h */,
-				0E231AC71C85816300D32945 /* PTButton.m */,
+				0EE6D7DB1C8FD97800F5EC74 /* PTBannerView.h */,
+				0EE6D7DC1C8FD97800F5EC74 /* PTBannerView.m */,
 				0EEEE2EE1C05EDEA00A367F5 /* PTBaseViewController.h */,
 				0EEEE2EF1C05EDEA00A367F5 /* PTBaseViewController.m */,
+				0E231AC61C85816300D32945 /* PTButton.h */,
+				0E231AC71C85816300D32945 /* PTButton.m */,
+				0E891AEB1C4E06C2006F6EA6 /* PTMenuHorizontal.h */,
+				0E891AEC1C4E06C2006F6EA6 /* PTMenuHorizontal.m */,
 				0E786CDE1C0602A9004232E7 /* PTNavigationController.h */,
 				0E786CDF1C0602A9004232E7 /* PTNavigationController.m */,
 				0EAE65DD1C291F4200392B31 /* PTTextField.h */,
 				0EAE65DE1C291F4200392B31 /* PTTextField.m */,
+				0EAE65E91C2A6EB600392B31 /* PTTextView.h */,
+				0EAE65EA1C2A6EB600392B31 /* PTTextView.m */,
 				0EEEE2F11C05EE3400A367F5 /* PTToast.h */,
 				0EEEE2F21C05EE3400A367F5 /* PTToast.m */,
 				0EEEE2451C05EC7800A367F5 /* TableViewController */,
-				0EAE65E91C2A6EB600392B31 /* PTTextView.h */,
-				0EAE65EA1C2A6EB600392B31 /* PTTextView.m */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -759,6 +764,7 @@
 				0EEEE2B71C05EC7800A367F5 /* FMDatabaseQueue.m in Sources */,
 				0EEEE2F31C05EE3400A367F5 /* PTToast.m in Sources */,
 				0EEEE2E91C05EC7800A367F5 /* UITableView+FDKeyedHeightCache.m in Sources */,
+				0EE6D7DD1C8FD97800F5EC74 /* PTBannerView.m in Sources */,
 				0EEEE2DC1C05EC7800A367F5 /* SDWebImageDownloaderOperation.m in Sources */,
 				0EEEE2B01C05EC7800A367F5 /* NSDictionary+Helper.m in Sources */,
 				0ECB89AA1C77008B001DE48B /* NSObject+FBKVOController.m in Sources */,
