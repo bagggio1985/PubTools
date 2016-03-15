@@ -124,6 +124,10 @@
 #pragma mark - Private
 
 - (void)innerConfigCell:(PTTableViewCell*)cell indexPath:(NSIndexPath*)indexPath {
+    cell.indexPath = indexPath;
+    cell.delegate = self;
+    cell.backgroundColor = [UIColor clearColor];
+    cell.selectionStyle = UITableViewCellSelectionStyleNone;    
     [self configCell:cell indexPath:indexPath];
     [cell configEntity:[self getEntityByIndexPath:indexPath]];
 }
@@ -262,11 +266,6 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
     PTTableViewCell* cell = (PTTableViewCell*)[tableView dequeueReusableCellWithIdentifier:[self getClassIdentifier:indexPath] forIndexPath:indexPath];
-    
-    cell.indexPath = indexPath;
-    cell.delegate = self;
-    cell.backgroundColor = [UIColor clearColor];
-    cell.selectionStyle = UITableViewCellSelectionStyleNone;
 
     [self innerConfigCell:cell indexPath:indexPath];
     

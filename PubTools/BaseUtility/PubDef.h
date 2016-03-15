@@ -13,13 +13,16 @@
     #import <UIKit/UIKit.h>
     #import <Foundation/Foundation.h>
     #import "PTMacroDef.h"
+
     // category
     #import "UIImage+Helper.h"
     #import "NSObject+ARC.h"
     #import "NSString+Helper.h"
+    #import "UIColor+Helper.h"
     #import "NSDictionary+Helper.h"
-    #import "PTUtility.h"
     #import "NSObject+FBKVOController.h"
+
+    #import "PTUtility.h"
 
     // ThirdParty
 
