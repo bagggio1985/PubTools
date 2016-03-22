@@ -39,7 +39,7 @@ typedef void(^PTTableViewPullRefrshBlock)();
 - (Class)getClass:(NSIndexPath*)indexPath;
 - (void)configCell:(PTTableViewCell*)cell indexPath:(NSIndexPath*)indexPath;
 // 该方法会默认获取dataArray的数量，如果需定制重写该方法
-- (NSUInteger)getCellCount;
+- (NSUInteger)getCellCount:(NSInteger)section;
 - (id)getEntityByIndexPath:(NSIndexPath*)indexPath;
 
 //////////////////////////////////////////////////////////////////////////////////////////////////

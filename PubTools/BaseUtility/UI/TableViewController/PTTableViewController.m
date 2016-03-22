@@ -117,7 +117,7 @@
     return [self.dataArray objectAtIndex:indexPath.row];
 }
 
-- (NSUInteger)getCellCount {
+- (NSUInteger)getCellCount:(NSInteger)section {
     return [self.dataArray count];
 }
 
@@ -260,7 +260,7 @@
 #pragma mark - UITableViewDataSource
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return [self getCellCount];
+    return [self getCellCount:section];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {

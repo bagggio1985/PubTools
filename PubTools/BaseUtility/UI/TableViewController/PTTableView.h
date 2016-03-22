@@ -29,7 +29,7 @@
 - (Class)getClass:(NSIndexPath*)indexPath;
 - (void)configCell:(PTTableViewCell*)cell indexPath:(NSIndexPath*)indexPath;
 // 该方法会默认获取dataArray的数量，如果需定制重写该方法
-- (NSUInteger)getCellCount;
+- (NSUInteger)getCellCount:(NSInteger)section;
 - (id)getEntityByIndexPath:(NSIndexPath*)indexPath;
 
 // 用来判断是否需要显示下一页
@@ -55,7 +55,7 @@
 - (Class)getCellClass:(PTTableView*)tableView indexPath:(NSIndexPath*)indexPath;
 - (void)configTableView:(PTTableView*)tableView cell:(PTTableViewCell*)cell indexPath:(NSIndexPath*)indexPath;
 // 该方法会默认获取dataArray的数量，如果需定制重写该方法
-- (NSUInteger)getCellCount:(PTTableView*)tableView;
+- (NSUInteger)getCellCount:(PTTableView*)tableView section:(NSInteger)section;
 - (id)getEntity:(PTTableView*)tableView indexPath:(NSIndexPath*)indexPath;
 
 @end

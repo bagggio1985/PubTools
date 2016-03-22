@@ -109,9 +109,9 @@
     return [self.dataArray objectAtIndex:indexPath.row];
 }
 
-- (NSUInteger)getCellCount {
-    if ([self.delegate respondsToSelector:@selector(getCellCount:)])
-        return [self.delegate getCellCount:self];
+- (NSUInteger)getCellCount:(NSInteger)section {
+    if ([self.delegate respondsToSelector:@selector(getCellCount:section:)])
+        return [self.delegate getCellCount:self section:section];
     return [self.dataArray count];
 }
 
@@ -250,7 +250,7 @@
 #pragma mark - UITableViewDataSource
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return [self getCellCount];
+    return [self getCellCount:section];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
