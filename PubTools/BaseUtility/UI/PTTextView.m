@@ -180,4 +180,9 @@ static CGFloat const kLabelTopOffsetRetina = 0.5f;
     }
 }
 
+- (void)layoutSubviews {
+    [super layoutSubviews];
+    [self layoutIfNeeded];
+}
+
 @end
