@@ -9,6 +9,7 @@
 #import <XCTest/XCTest.h>
 #import "PTSerialize.h"
 #import "PTLock.h"
+#import "PTFileUtils.h"
 
 @interface PubToolsTests : XCTestCase
 
@@ -32,13 +33,29 @@
 {
 //    XCTFail(@"No implementation for \"%s\"", __PRETTY_FUNCTION__);
 //    [PubLocation systemLocationStatus];
-    PTLock *lock = [[PTLock alloc] init];
-    {
-        [[PTAutoLock alloc] initWithLock:lock];
-    }
+//    PTLock *lock = [[PTLock alloc] init];
+//    {
+//        [[PTAutoLock alloc] initWithLock:lock];
+//    }
+//    
+//    int i = 0;
     
-    int i = 0;
+    NSLog(@"%@", [[PTFileUtils getDocumentPath] stringByAppendingPathComponent:@"abc/123"]);
+    NSLog(@"%@", [PTFileUtils getCachePath]);
+    NSLog(@"%@", [PTFileUtils getResourcePath]);
+    NSLog(@"%@", [PTFileUtils getTemporaryPath]);
+    
+    [PTFileUtils createFolderAtPath:[[PTFileUtils getDocumentPath] stringByAppendingPathComponent:@"abc/123"]];
 
+    NSString* filePath = [PTFileUtils getFilePathAtDocument:@"1111/1231.txt"];
+    
+    XCTAssert([PTFileUtils createFileAtPath:filePath]);
+    XCTAssert([PTFileUtils removeFileAtPath:filePath]);
+    
+    XCTAssert([PTFileUtils removeFolderAtPath:[PTFileUtils getFilePathAtDocument:@"1111"]]);
+    XCTAssert([PTFileUtils removeFolderAtPath:[PTFileUtils getFilePathAtDocument:@"abc"]]);
+
+    
 }
 
 @end
