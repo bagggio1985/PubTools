@@ -9,4 +9,6 @@
 
 @interface PTUtility : NSObject
 
++ (NSString *)currentIPAddress;
+
 @end
