@@ -10,11 +10,25 @@
 #define PubTools_PubMacroDef_h
 
 #ifdef DEBUG
-#define DEBUG_NSLog(format, ...) NSLog(format, ##__VA_ARGS__)
-#define DEBUG_NSAssert(codition, ...) NSAssert(codition, @"", ##__VA_ARGS__)
+
+    #ifndef DEBUG_NSLog
+        #define DEBUG_NSLog(format, ...) NSLog(format, ##__VA_ARGS__)
+    #endif
+
+    #ifndef DEBUG_NSAssert
+        #define DEBUG_NSAssert(codition, ...) NSAssert(codition, @"", ##__VA_ARGS__)
+    #endif
+
 #else
-#define DEBUG_NSLog(format, ...)
-#define DEBUG_NSAssert(codition, ...)
+
+    #ifndef DEBUG_NSLog
+        #define DEBUG_NSLog(format, ...)
+    #endif
+
+    #ifndef DEBUG_NSAssert
+        #define DEBUG_NSAssert(codition, ...)
+    #endif
+
 #endif
 
 #define DEBUG_LOG_FUNCTION  DEBUG_NSLog(@"%s", __func__)
@@ -33,5 +47,8 @@
 #define PT_WhiteColor [UIColor whiteColor]
 
 #define BLOCK_SAFE_RUN(block, ...) block ? block(__VA_ARGS__) : nil;
+
+#define COMMON_PRE_SUFFIX(PRE, SUFFIX) PRE ## SUFFIX
+#define PT_PRE_SUFFIX(SUFFIX) COMMON_PRE_SUFFIX(PT, SUFFIX)
 
 #endif
